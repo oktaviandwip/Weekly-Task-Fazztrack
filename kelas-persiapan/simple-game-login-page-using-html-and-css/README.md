@@ -3,4 +3,4 @@
 </div>
 
 ## How It Works
-<p align="center"><img src="/assets/How It Works.gif" alt="Simple Game Login GIF" style="width: 70%"></p>
+<p align="center"><img src="assets/How It Works.gif" alt="Simple Game Login GIF" style="width: 70%"></p>
