@@ -50,7 +50,7 @@ Sub-Total: 105000
 4. Divide and Sort
 </h2>
 
-<p align="center"><img src="assets/divide-and-sort.png" width=80% alt="Divide and sort" /></p>
+<p align="center"><img src="assets/divide-and-sort.png" width=60% alt="Divide and sort" /></p>
 
 ```bash
 # Call the function
