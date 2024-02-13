@@ -1,0 +1,211 @@
+.header {
+  position: relative;
+}
+
+.banner {
+  width:100%;
+  height: 240px;
+  object-fit:cover;
+  object-position: bottom;
+}
+
+.logo {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  width: 200px;
+  transform: translateX(-50%);
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+}
+
+.hp-section {
+  flex: 1;
+  margin-top: 25px;
+  margin-left: -50px;
+}
+
+.hp-image {
+  width: 90%;
+}
+
+.input-section {
+  display: block;
+  width: 500px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.login-logo {
+  width: 80px;
+}
+
+.login-title {
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-instruction {
+  color: #808080;
+  font-size: 13px;
+}
+
+.input-email {
+  position: relative;
+  margin-left: -100px;
+}
+
+.email, .password {
+  width: 270px;
+  height: 35px;
+  font-weight: 600;
+  color: #808080;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  padding-left:10px;
+  margin-left: 100px;
+  box-shadow: inset 0px 1px 2px #d6d6d6;
+  cursor: pointer;
+}
+
+.email {
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+
+.email::placeholder,
+.password::placeholder{
+  color: #d6d6d6;
+}
+
+.remember-me {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: #808080;
+  margin-left: 200px;
+  margin-top: 7px;
+}
+
+.checkbox {
+  position: absolute;
+  left: 210px;
+  height: 20px;
+  width: 20px;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  accent-color: #f5f5f5;
+  opacity: 1;
+}
+
+.checkmark {
+  height: 25px;
+  width: 25px;
+  background-color: #f5f5f5;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 2px #d6d6d6;
+}
+
+.text-remember-me {
+  font-size: 10px;
+  margin-left: 5px;
+  opacity: 60%;
+}
+
+.information-button {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-color: #f5f5f5;
+  margin-left: 85px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: inset 0px 1px 2px #d6d6d6;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.information-button a {
+  color: #808080;
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 60%;
+  text-decoration: none;
+}
+
+.tooltip-information {
+  position: absolute;
+  top: 30px;
+  left: -40px;
+  width: 100px;
+  height: 15px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: #808080;
+  padding-top: 3px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.information-button:hover 
+.tooltip-information {
+  opacity: 1;
+}
+
+.button {
+  margin-top: 15px;
+}
+
+.cancel-button, 
+.login-button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: transform 0.1s ease, color 0.1s ease;
+  cursor: pointer;
+}
+
+.cancel-button {
+  color: black;
+  background-color: white;
+  border: 2px solid #f0f0f0;
+}
+
+.cancel-button a {
+  color: black;
+  text-decoration: none;
+}
+  
+.login-button {
+  color: white;
+  background-color: #3a90fb;
+  border: none;
+  margin-left: 20px;
+  box-shadow: 0px 2px #1972e2;
+}
+
+.login-button:active,
+.cancel-button:active {
+  transform: scale(0.9);
+  color: black;
+}
