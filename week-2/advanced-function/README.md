@@ -30,7 +30,7 @@ Javascript Belajar Saya
 3. Fazzfood
 </h2>
 
-<p align="center"><img src="assets/palindrome-check.png" width=80% alt="Palindrome check" /></p>
+<p align="center"><img src="assets/fazzfood.png" width=80% alt="fazzfood" /></p>
 
 ```bash
 # Call the function
