@@ -19,16 +19,12 @@ function fazzFood (price, voucher, distance, tax) {
   //Calculate the Sub-Total
   let discount = 0
 
-  if (voucher === 'FAZZFOOD50' && ) {
-    if (price >= 50000) {
-      discount = price * 0.5
-      discount = discount > 50000? 50000 : discount 
-    }
-  } else if (voucher === 'DITRAKTIR60') {
-    if (price >= 25000) {
-      discount = price * 0.6
-      discount = discount > 30000? 30000 : discount
-    }
+  if (voucher === 'FAZZFOOD50' && price >= 50000) {
+    discount = price * 0.5
+    discount = discount > 50000? 50000 : discount 
+  } else if (voucher === 'DITRAKTIR60' && price >= 25000) {
+    discount = price * 0.6
+    discount = discount > 30000? 30000 : discount
   }
   
   const deliveryFee = distance <= 2? 5000 : 5000 + (distance - 2) * 3000
