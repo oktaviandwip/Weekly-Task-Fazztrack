@@ -1,10 +1,11 @@
 const express = require('express')
 const routers = express.Router()
-const controllers = require('../controllers/schedules')
+const controllers = require('../controllers/tickets')
 const authCheck = require('../middleware/auth')
 
-routers.get('/', authCheck(), controllers.get)
-routers.post('/', authCheck('admin'), controllers.add)
+routers.get('/:id', authCheck(), controllers.getUser)
+routers.get('/', authCheck('admin'), controllers.get)
+routers.post('/:id', authCheck('admin'), controllers.create)
 routers.put('/:id', authCheck('admin'), controllers.update)
 routers.delete('/:id', authCheck('admin'), controllers.delete)
 

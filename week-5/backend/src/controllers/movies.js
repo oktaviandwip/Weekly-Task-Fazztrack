@@ -1,95 +1,104 @@
 const controllers = {}
+const fs = require('fs')
 const models = require('../models/movies')
+const response = require('../utils/response')
 
 //Get and sort all the movies
 controllers.getOrSort = async (req, res) => {
-  if (Object.keys(req.query).length === 0) {
-    try {
-      const { rows } = await models.getData()
-      res.status(200).json(rows)
-    } catch (err) {
-      res.status(500).json({error: err.message})
-    }
-  } else if (Object.keys(req.query)[0] === 'page' ) {
+  if (Object.keys(req.query)[0] === 'page' ) {
     try {
       const page = parseInt(Object.values(req.query)[0])
-      const { rows } = await models.getData(page)
-      res.status(200).json(rows)
+      const data = await models.getData(page)
+      return response(res, 200, data)
     } catch (err) {
-      res.status(500).json({error: err.message})
+      return response(res, 500, err.message)
     }
   } else {
     try {
-      const {sortby, order} = req.query
-      const { rows } = await models.sortData(sortby, order)
-      res.status(200).json(rows)
+      const {sortby, order, page} = req.query
+      const parsedPage = parseInt(page)
+      const data = await models.sortData(sortby, order, parsedPage)
+      return response(res, 200, data)
     } catch (err) {
-      res.status(500).json({error: err.message})
+      return response(res, 500, err.message)
     }
   }
 }
 
 //Search the movies
 controllers.search = async (req, res) => {
-  if (Object.keys(req.query)[0] === 'page' ) {
-    try {
-      const page = parseInt(Object.values(req.query)[0])
-      const { rows } = await models.searchData(req.params.name, page)
-      res.status(200).json(rows)
-    } catch (err) {
-      res.status(500).json({error: err.message})
-    }
-  } else {
-    try {
-      const { rows } = await models.searchData(req.params.name)
-      if (rows.length === 0) {
-        res.send('Movie not found')
-      } else {
-        res.status(200).json(rows)
-      }
-    } catch (err) {
-      res.status(500).json({error: err.message})
-    }
+  try {
+    const page = parseInt(Object.values(req.query)[0])
+    const data = await models.searchData(req.params.name, page)
+    return response(res, 200, data)
+  } catch (err) {
+    return response(res, 500, err.message)
   }
 }
 
 //Add a movie
 controllers.add = async (req, res) => {
   try {
-    const { rowCount } = await models.addData(req.body)
-    if (rowCount === 1) {
-      res.status(200).send('Movie has been successfully added')
+    if (req.file !== undefined) {
+      req.body.image = `http://localhost:8000/image/${req.file.filename}`
+    }
+
+    const { rows } = await models.addData(req.body)
+    if (rows.length === 1) {
+      return response(res, 200, rows)
     }
   } catch (err) {
-    res.status(500).send(err.message)
+    return response(res, 500, err.message)
   }
 }
 
 //Update a movie
 controllers.update = async (req, res) => {
   try {
-    const { rowCount } = await models.updateData(req.body, req.params.id)
-    if (rowCount === 0) {
-      res.send('Movie not found')
+    if (req.file !== undefined) {
+      req.body.image = `http://localhost:8000/image/${req.file.filename}`
+    }
+    
+    const { image, movie_id} = await models.updateData(req.body, req.params.id)
+    if (movie_id === undefined) {
+      return response(res, 404, "Movie not Found")
     } else {
-      res.status(200).send('Movie has been successfully updated')
+      const filePath = 'C:/Users/oktav/Desktop/weekly-tasks-fazztrack/week-5/backend/public/upload/' + image.split('/')[4]
+
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error(`Error deleting file: ${err}`);
+        } else {
+          console.log(`File ${filePath} deleted successfully`);
+          return response(res, 200, {movie_id})
+        }
+      })
     }
   } catch (err) {
-    res.status(500).send(err.message)
+    return response(res, 500, err.message)
   }
 }
 
 //Delete a movie
 controllers.delete = async (req, res) => {
   try {
-    const { rowCount } = await models.deleteData(req.params.id)
-    if (rowCount === 0) {
-      res.send('Movie not found')
+    const { image, movie_id} = await models.deleteData(req.params.id)
+    if (movie_id === undefined) {
+      return response(res, 404, "Movie not Found")
     } else {
-      res.status(200).send('Movie has been successfully deleted')
+      const filePath = 'C:/Users/oktav/Desktop/weekly-tasks-fazztrack/week-5/backend/public/upload/' + image.split('/')[4]
+
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          console.error(`Error deleting file: ${err}`);
+        } else {
+          console.log(`File ${filePath} deleted successfully`);
+          return response(res, 200, {movie_id})
+        }
+      })
     }
   } catch (err) {
-    res.status(500).send(err.message)
+    return response(res, 500, err.message)
   }
 }
 
