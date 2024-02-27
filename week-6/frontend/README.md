@@ -21,7 +21,7 @@ git clone https://github.com/oktaviandwip/weekly-tasks-fazztrack.git
 
 2. Run the app
 
-Open ```index.html```
+   🚀 Open ```index.html```
 
 🌟 You are all set!
 
