@@ -1,0 +1,277 @@
+body {
+  height: 1024px;
+  background-image: url(../assets/sign-up-background-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+main {
+  position: relative;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 276px;
+  height: 104px;
+  margin-bottom: 21px;
+  background-image: url(../assets/sign-up-icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 576px;
+  height: 756px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.step-by-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 397px;
+  height: 75px;
+  margin-top: 35px;
+  font-size: 14px;
+}
+
+.step-by-step .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-by-step .step p {
+  margin-top: 10px;
+}
+
+.step-by-step .step.two p,
+.step-by-step .step.three p {
+  color: var(--dark-grey);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 46px;
+}
+
+form input {
+  width: 400px;
+  height: 64px;
+  margin: 12px 0 26px 0;
+  padding-left: 24px;
+  border-radius: 4px;
+  background-color: var(--lighter-grey);
+  border: 1px solid rgba(var(--grey), 0.5);
+  outline: 1px solid var(--grey);
+}
+
+form input::placeholder {
+  color: var(--dark-grey);
+  font-weight: 400;
+  letter-spacing: 0.75px;
+}
+
+form .password {
+  position: relative;
+}
+
+
+form .password label {
+  display: block;
+}
+
+form .password span {
+  position: absolute;
+  top: 55px;
+  right: 22px;
+  background-image: url(../assets/hide-password.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  padding: 10px;
+}
+
+form .terms-conditions {
+  display: flex;
+  align-items: top;
+}
+
+form .terms-conditions input {
+  width: 21px;
+  height: 21px;
+  margin-top: 0;
+  margin-right: 21px;
+  outline: none;
+  accent-color: var(--blue);
+}
+
+form .terms-conditions label {
+  color: var(--darkest-grey);
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -1px;
+}
+
+form button {
+  height: 64px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.75px;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 4px;
+}
+
+form button .free {
+  display: none;
+}
+
+@keyframes buttonClicked {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+form button:active,
+.google:active, .facebook:active {
+  animation: buttonClicked 0.3s ease-in-out;
+}
+
+.already-have-an-account {
+  color: var(--darkest-grey);
+  font-family: "Inter";
+  font-weight: 500;
+  margin: 26px 0;
+}
+
+.already-have-an-account span {
+  color: var(--blue);
+  font-family: "Inter";
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.horizontal-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 26px;
+}
+
+.horizontal-line p {
+  color: var(--darker-grey);
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.horizontal-line hr {
+  width: 153px;
+  border-top: 1px solid var(--grey);
+}
+
+.google-facebook {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.google-facebook p {
+  color: var(--dark-grey);
+  font-size: 18px;
+  margin-left: 24px;
+}
+
+.google, .facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 182px;
+  height: 64px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .icon {
+    width: 85px;
+    height: 32px;
+  }
+
+  .login {
+    width: 326px;
+    height: 535px;
+  }
+
+  form input {
+    height: 50px;
+  }
+
+  form .password span {
+    top: 49px
+  }
+
+  .step-by-step,
+  form .terms-conditions {
+    display: none;
+  }
+
+  form button {
+    height: 48px;
+  }
+
+  form button .free-now {
+    display: none;
+  }
+
+  form button .free {
+    display: block;
+  }
+
+  form,
+  form input,
+  .step-by-step,
+  .horizontal-line {
+    width: 284px;
+  }
+
+  .horizontal-line hr {
+    width: 100px;
+  }
+
+  .google-facebook {
+    width: 160px;
+  }
+
+  .google, .facebook {
+    width: 64px;
+  }
+
+  .google p, .facebook p {
+    display: none;
+  }
+}

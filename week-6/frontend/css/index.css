@@ -1,0 +1,970 @@
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--grey);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1106px;
+  height: 104px;
+}
+
+.header .icon {
+  width: 130px;
+  height: 51px;
+  background-image: url('../assets/tickitz-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  width: 265px;
+  height: 20px;
+}
+
+.header nav a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.header .hamburger-menu {
+  width: 24px;
+  height: 24px;
+  margin-top: 14px;
+  background-image: url('../assets/hamburger-menu.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  display: none;
+}
+
+.header .sign-in-sign-up {
+  display: flex;
+  justify-content: space-between;
+  width: 185px;
+  height: 48px;
+}
+
+.header .sign-in,
+.header .sign-up {
+  width: 86px;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid var(--blue); 
+  border-radius: 5px;
+}
+
+.header .sign-in {
+  color: var(--blue);
+  background-color: white;
+}
+
+.header .sign-up {
+  color: white;
+  background-color: var(--blue);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1106px;
+  margin: 0 auto;
+}
+
+main .hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 436px;
+  margin: 51px 0 95px 0;
+}
+
+main .hero-text {
+  display: flex;
+  flex-direction: column;
+  width: 638px;
+}
+
+main .hero-text .tagline {
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.75px;
+}
+
+main .hero-text .headline {
+  margin: 10px 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 70px;
+  letter-spacing: 1px;
+}
+
+main .hero-text .cta {
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.75px;
+}
+
+main .hero-images {
+  display: flex;
+  justify-content: space-between;
+  width: 447px;
+}
+
+main .hero-images .left-images,
+main .hero-images .right-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 217px;
+}
+
+main .hero-images .left-images .top {
+  height: 170px;
+  margin-bottom: 16px;
+  background-image: url('../assets/jhon-wick-3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  border-radius: 20px 20px 0 0;
+}
+
+main .hero-images .left-images .bottom {
+  height: 250px;
+  background-image: url('../assets/spiderman-homecoming.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  border-radius: 0 0 20px 20px;
+}
+
+main .hero-images .right-images .top {
+  height: 250px;
+  margin-bottom: 16px;
+  background-image: url('../assets/lion-king.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  border-radius: 20px 20px 0 0;
+}
+
+main .hero-images .right-images .bottom {
+  height: 170px;
+  background-image: url('../assets/roblox.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  border-radius: 0 0 20px 20px;
+}
+
+main .why-choose-us {
+  width: 100%;
+  height: 444px;
+}
+
+main .why-choose-us .title {
+  margin: 24px 0 14px 0;
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.75px;
+}
+
+main .why-choose-us .sub-title {
+  width: 500px;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 1px;
+}
+
+main .why-choose-us .advantages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 255px;
+}
+
+main .why-choose-us .advantages .icon {
+  width: 54px;
+  height: 54px;
+}
+
+main .why-choose-us .advantages .name {
+  margin: 19px 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+main .why-choose-us .advantages .desc {
+  width: 340px;
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 32px;
+  letter-spacing: 0.75px;
+}
+
+main .why-choose-us .advantages .guaranteed .icon {
+  background-image: url('../assets/guaranteed.png');
+}
+
+main .why-choose-us .advantages .affordable .icon {
+  background-image: url('../assets/affordable.png');
+}
+
+main .why-choose-us .advantages .customer-support .icon {
+  background-image: url('../assets/customer-support.png');
+}
+
+main .recommended {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 774px;
+}
+
+main .recommended .title {
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.75px;
+}
+
+main .recommended .sub-title {
+  width: 545px;
+  margin: 14px 0 28px 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 1px;
+}
+
+main .recommended .movies {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 38px;
+}
+
+main .recommended .movies .movie {
+  position: relative;
+}
+
+main .recommended .movies .movie .badge-recommended {
+  position: absolute;
+  top: 9px;
+  left: -10px;
+  width: 135px;
+  height: 36px;
+  padding: 2.5px 17px;
+  background-image: url('../assets/badge-recommended.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .recommended .movies .movie .badge-recommended span {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+main .recommended .movies .movie.one .badge-recommended,
+main .recommended .movies .movie.four .badge-recommended {
+  display: none;
+}
+
+main .recommended .movies .movie .movie-image {
+  width: 264px;
+  height: 405px;
+  border-radius: 6px;
+}
+
+main .recommended .movies .movie .details-buy-ticket {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  width: 188px;
+  height: 108px;
+  justify-content: space-between;
+}
+
+main .recommended .movies .movie .details,
+main .recommended .movies .movie .buy-ticket {
+  display: none;
+  height: 48px;
+  border-radius: 5px;
+}
+
+main .recommended .movies .movie .details a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.75px;
+}
+
+main .recommended .movies .movie .details a:visited {
+  color: white;
+  font-weight: 400;
+}
+
+main .recommended .movies .movie .details {
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+main .recommended .movies .movie .buy-ticket {
+  color: white;
+  border: 1px solid var(--blue);
+  background-color: var(--blue);
+}
+
+main .recommended .movies .movie .movie-image:hover {
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+main .recommended .movies .movie .movie-image:hover .details, 
+main .recommended .movies .movie .movie-image:hover .buy-ticket {
+  display: block;
+}
+
+main .recommended .movies .movie .name {
+  margin: 19px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+main .recommended .movies .movie .genres span {
+  padding: 8px 18px;
+  margin-right: 7px;
+  border-radius: 20px;
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--light-grey);
+}
+
+main .recommended .movies .movie-image.one {
+  background-image: url('../assets/black-widow.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .recommended .movies .movie-image.two {
+  background-image: url('../assets/the-witches.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .recommended .movies .movie-image.three {
+  background-image: url('../assets/tenet.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .recommended .movies .movie-image.four {
+  background-image: url('../assets/spiderman-homecoming.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .recommended .view-all {
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+main .recommended .view-all span {
+  margin-left: 7px;
+  font-family: calibri;
+  font-size: 19px;
+}
+
+main .upcoming {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  height: 774px;
+}
+
+main .upcoming .title {
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.75px;
+}
+
+main .upcoming .sub-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 69px;
+  margin: 14px 0 28px 0;
+  line-height: 45px;
+  letter-spacing: 1px;
+}
+
+main .upcoming .sub-title p {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+main .upcoming .sub-title .back-next-arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 145px;
+}
+
+main .upcoming .sub-title .back-next-arrows .arrow {
+  width: 69px;
+  height: 69px;
+}
+
+main .upcoming .sub-title .back-next-arrows .back {
+  background-image: url('../assets/back-arrow.png');
+}
+
+main .upcoming .sub-title .back-next-arrows .next {
+  background-image: url('../assets/next-arrow.png');
+}
+
+main .upcoming .movies {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main .upcoming .movies .movie .movie-image {
+  width: 264px;
+  height: 405px;
+  border-radius: 6px;
+}
+
+main .upcoming .movies .movie .name {
+  margin-top: 19px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+main .upcoming .movies .movie .date {
+  margin: 11px 0 19px;
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+main .upcoming .movies .movie .genres span {
+  padding: 8px 18px;
+  margin-right: 7px;
+  border-radius: 20px;
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--light-grey);
+}
+
+main .upcoming .movies .movie-image.one {
+  background-image: url('../assets/black-widow.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .upcoming .movies .movie-image.two {
+  background-image: url('../assets/the-witches.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .upcoming .movies .movie-image.three {
+  background-image: url('../assets/tenet.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .upcoming .movies .movie-image.four {
+  background-image: url('../assets/spiderman-homecoming.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+main .subscribe-newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 318px;
+  background-color: var(--light-blue);
+  border-radius: 20px;
+}
+
+main .subscribe-newsletter .title {
+  margin-top: 80px;
+  color: white;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+main .subscribe-newsletter form {
+  display: flex;
+  justify-content: space-between;
+  width: 702px;
+  margin-top: 48px;
+  color: white;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+main .subscribe-newsletter form input {
+  width: 230px;
+  height: 60px;
+  padding-left: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 9px;
+  outline: none;
+}
+
+main .subscribe-newsletter form input::placeholder {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+main .subscribe-newsletter form button {
+  color: var(--blue);
+  width: 218px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid white;
+  border-radius: 9px;
+}
+
+@keyframes buttonClicked {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.header .sign-in:active,
+.header .sign-up:active,
+main .recommended .movies .movie .movie-image .details:active,
+main .recommended .movies .movie .movie-image .buy-ticket:active,
+main .subscribe-newsletter form button:active {
+  animation: buttonClicked 0.3s ease-in-out;
+}
+
+main .subscribe-newsletter .bottom {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+} 
+
+main .subscribe-newsletter .curved-line {
+  width: 119px;
+  height: 119px;
+  background-image: url('../assets/white-curved-line.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1106px;
+  height: 439px;
+  margin: 0 auto;
+}
+
+footer .link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 279px;
+}
+
+footer .link .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 16px 0 22px 0;
+}
+
+footer .link .tagline {
+  display: flex;
+  flex-direction: column;
+  width: 284px;
+}
+
+footer .link .tagline .icon {
+  width: 184px;
+  height: 72px;
+  margin-bottom: 16px;
+  background-image: url('../assets/tickitz-icon-2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+}
+
+footer .link .tagline .text {
+  color: var(--darkest-grey);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.75px;
+}
+
+footer .link .explore nav,
+footer .link .our-sponsor nav,
+footer .link .follow-us nav {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .link .explore nav a,
+footer .link .follow-us nav a,
+footer .copyright {
+  color: var(--darkest-grey);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+footer .link .our-sponsor nav a .ebv-id,
+footer .link .our-sponsor nav a .cine-one-21,
+footer .link .our-sponsor nav a .hiflix,
+footer .link .follow-us nav a .facebook,
+footer .link .follow-us nav a .instagram,
+footer .link .follow-us nav a .twitter,
+footer .link .follow-us nav a .youtube {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+footer .link .explore nav a,
+footer .link .our-sponsor nav a,
+footer .link .follow-us nav a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+footer .link .explore nav a {
+  margin-bottom: 14px;
+}
+
+footer .link .our-sponsor nav a .ebv-id {
+  width: 122px;
+  height: 46px;
+  background-image: url('../assets/ebv-id.png');
+}
+
+footer .link .our-sponsor nav a .cine-one-21 {
+  width: 174px;
+  height: 28px;
+  background-image: url('../assets/CineOne21.png');
+}
+
+footer .link .our-sponsor nav a .hiflix {
+  width: 80px;
+  height: 26px;
+  background-image: url('../assets/hiflix.png');
+}
+
+footer .link .follow-us nav a div {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+footer .link .follow-us nav a .facebook {
+  background-image: url('../assets/facebook-icon-2.png');
+}
+
+footer .link .follow-us nav a .instagram {
+  background-image: url('../assets/instagram-icon.png');
+}
+
+footer .link .follow-us nav a .twitter {
+  background-image: url('../assets/twitter-icon.png');
+}
+
+footer .link .follow-us nav a .youtube {
+  background-image: url('../assets/youtube-icon.png');
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    margin: 0 24px;
+  }
+
+  .header .icon {
+    width: 93px;
+    height: 37px;
+  }
+
+  .header nav,
+  .header .sign-in,
+  .header .sign-up {
+    display: none;
+  }
+
+  .header .hamburger-menu {
+    display: block;
+    margin-left: 160px;
+  }
+
+  main {
+    width: 375px;
+  }
+
+  main .hero {
+    flex-direction: column;
+    margin-bottom: 290px;
+  }
+
+  main .hero .hero-text {
+    width: 327px;
+    align-items: center;
+    text-align: center;
+  }
+
+  main .hero .hero-text .headline {
+    margin: 19px 0;
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  main .hero .hero-text .cta {
+    margin-bottom: 19px;
+  }
+
+  main .hero .hero-images {
+    width: 327px;
+    margin-bottom: 70px;
+  }
+
+  main .hero .hero-images .right-images,
+  main .hero .hero-images .left-images {
+    width: 159px;
+    height: 320px;
+  }
+
+  main .why-choose-us {
+    width: 327px;
+    height: 1056px;
+  }
+
+  main .why-choose-us .title,
+  main .why-choose-us .sub-title {
+    width: 327px;
+    text-align: center;
+  }
+
+  main .why-choose-us .advantages {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  main .why-choose-us .advantages .guaranteed,
+  main .why-choose-us .advantages .affordable,
+  main .why-choose-us .advantages .customer-support {
+  margin-bottom: 33px;
+  }
+
+  main .why-choose-us .advantages .guaranteed div,
+  main .why-choose-us .advantages .affordable div,
+  main .why-choose-us .advantages .customer-support div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  main .why-choose-us .advantages .guaranteed .icon,
+  main .why-choose-us .advantages .affordable .icon,
+  main .why-choose-us .advantages .customer-support .icon {
+    margin-left: 135px;
+  }
+
+  main .why-choose-us .advantages .guaranteed .desc,
+  main .why-choose-us .advantages .affordable .desc,
+  main .why-choose-us .advantages .customer-support .desc {
+    width: 327px;
+  }
+
+  main .recommended,
+  main .upcoming,
+  main .subscribe-newsletter {
+    width: 327px;
+  }
+
+  main .recommended .sub-title,
+  main .upcoming .sub-title {
+    width: 327px;
+    margin-bottom: 41px;
+    text-align: center;
+  }
+
+  main .recommended .movies .movie .movie-image,
+  main .upcoming .movies .movie .movie-image {
+    width: 240px;
+    height: 369px;
+    margin-right: 20px;
+  }
+
+  main .recommended .view-all,
+  main .upcoming .sub-title .back-next-arrows {
+    display: none;
+  }
+
+  main .upcoming .title {
+    text-align: center;
+  }
+
+  main .subscribe-newsletter {
+    height: 537px;
+    margin-top: -20px;
+  }
+
+  main .subscribe-newsletter .title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  main .subscribe-newsletter form {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 327px;
+    height: 202px;
+    margin-bottom: 55px;
+  }
+
+  main .subscribe-newsletter form input,
+  main .subscribe-newsletter form button {
+    width: 264px;
+    margin-bottom: 11px;
+  }
+
+  footer {
+    width: 375px;
+    height: 716px;
+    margin-top: 100px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  footer .link {
+    flex-direction: column;
+    margin-left: 24px;
+  }
+
+  footer .link .tagline .icon {
+    width: 153px;
+    height: 60px;
+  }
+
+  footer .link .tagline .text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  footer .link .tagline, 
+  footer .link .explore,
+  footer .link .our-sponsor,
+  footer .link .follow-us {
+    margin-bottom: 24px;
+  }
+
+  footer .link .explore nav,
+  footer .link .our-sponsor nav,
+  footer .link .follow-us nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 327px;
+  }
+
+  footer .link .explore nav a {
+    margin-right: 40px;
+  }
+
+  footer .link .our-sponsor nav {
+    justify-content: space-between;
+  }
+
+  footer .link .our-sponsor nav a .ebv-id,
+  footer .link .our-sponsor nav a .cine-one-21,
+  footer .link .our-sponsor nav a .hiflix {
+    width: 81px;
+    height: 30px;
+    margin-right: 24px;
+  }
+
+  footer .link .our-sponsor nav a .cine-one-21 {
+    margin-top: 10px;
+  }
+
+  footer .link .follow-us nav a {
+    margin-right: 16px;
+  }
+
+  footer .link .follow-us nav a p {
+    display: none;
+  }
+
+  footer .copyright {
+    margin-top: 300px;
+    margin-left: 24px;
+  }
+}
