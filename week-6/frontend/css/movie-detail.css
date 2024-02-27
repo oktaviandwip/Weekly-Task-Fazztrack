@@ -54,8 +54,6 @@ header {
 .header .sign-in,
 .header .sign-up {
   width: 86px;
-  font-size: 14px;
-  font-weight: 400;
   border: 1px solid var(--blue); 
   border-radius: 5px;
 }
@@ -68,6 +66,20 @@ header {
 .header .sign-up {
   color: white;
   background-color: var(--blue);
+}
+
+.header .sign-in a,
+.header .sign-up a {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.header .sign-in a:visited {
+  color: var(--blue);
+}
+
+.header .sign-up a:visited {
+  color: white;
 }
 
 @keyframes buttonClicked {

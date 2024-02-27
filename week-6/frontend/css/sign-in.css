@@ -129,7 +129,9 @@ form button {
   }
 }
 
-form button:active {
+form button:active,
+.google:active, 
+.facebook:active {
   animation: buttonClicked 0.3s ease-in-out;
 }
 

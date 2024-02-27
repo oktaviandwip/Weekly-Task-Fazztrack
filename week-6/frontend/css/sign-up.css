@@ -157,7 +157,8 @@ form button .free {
 }
 
 form button:active,
-.google:active, .facebook:active {
+.google:active, 
+.facebook:active {
   animation: buttonClicked 0.3s ease-in-out;
 }
 

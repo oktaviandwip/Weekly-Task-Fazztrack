@@ -25,3 +25,7 @@
   --blue: rgb(29, 78, 216);
   --light-blue: rgb(37, 99, 235);
 }
+
+a {
+  text-decoration: none;
+}
