@@ -169,7 +169,7 @@ form button:active,
   margin: 26px 0;
 }
 
-.already-have-an-account span {
+.already-have-an-account a {
   color: var(--blue);
   font-family: "Inter";
   font-weight: 500;

@@ -610,6 +610,7 @@ main .subscribe-newsletter form button {
 .header .sign-up:active,
 main .recommended .movies .movie .movie-image .details:active,
 main .recommended .movies .movie .movie-image .buy-ticket:active,
+main .upcoming .sub-title .arrow:active,
 main .subscribe-newsletter form button:active {
   animation: buttonClicked 0.3s ease-in-out;
 }
@@ -873,6 +874,10 @@ footer .link .follow-us nav a .youtube {
     width: 240px;
     height: 369px;
     margin-right: 20px;
+  }
+
+  main .recommended .movies .movie .details-buy-ticket {
+    left: 10%;
   }
 
   main .recommended .view-all,
