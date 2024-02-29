@@ -13,13 +13,25 @@
         <a href="./index.html">
           <div class="icon"></div>
         </a>
-        <nav>
-          <a href="./index.html">Home</a>
-          <a href="#">Movie</a>
-          <a href="#">Buy Ticket</a>
+        <nav class="pages">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Movie</a></li>
+            <li><a href="#">Buy Ticket</a></li>
+          </ul>
         </nav>
         <nav class="sign-in-sign-up">
           <div class="hamburger-menu"></div>
+          <aside class="sidebar">
+            <img class="close-menu" src="./assets/close-menu.svg" alt="Close menu">
+            <ul>
+              <li><a href="./sign-in.html">Sign Up</a></li>
+              <li><a href="./sign-in.html">Sign In</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="#">Movie</a></li>
+              <li><a href="#">Buy Ticket</a></li>
+            </ul> 
+          </aside>
           <a href="./sign-in.html" class="sign-in">Sign In</a>
           <a href="./sign-up.html" class="sign-up">Sign Up</a>
         </nav>
@@ -167,5 +179,17 @@
 
       <div class="copyright">© 2020 Tickitz. All Rights Reserved.</div>
     </footer>
+
+    <script>
+      const closeMenu = document.querySelector('.close-menu')
+      const hamburgerMenu = document.querySelector('.hamburger-menu')
+      const sidebar = document.querySelector('.sidebar')
+      hamburgerMenu.addEventListener('click', () => {
+        sidebar.style.display = 'flex'
+      })
+      closeMenu.addEventListener('click', () => {
+        sidebar.style.display = 'none'
+      })
+    </script>
   </body>
 </html>

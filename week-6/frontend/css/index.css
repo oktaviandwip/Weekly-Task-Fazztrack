@@ -82,7 +82,7 @@ header {
 }
 
 .header aside {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   width: 250px;
@@ -109,7 +109,7 @@ header {
 
 .header aside li {
   display: block;
-  margin-right: 80px;
+  margin-right: 20px;
 }
 
 .header aside a:hover {
@@ -829,26 +829,6 @@ footer .link .follow-us nav a .twitter {
 footer .link .follow-us nav a .youtube {
   background-image: url('../assets/youtube-icon.png');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 600px) {
   .header {
