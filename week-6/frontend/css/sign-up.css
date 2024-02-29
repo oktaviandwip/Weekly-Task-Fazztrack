@@ -1,6 +1,6 @@
 body {
   height: 1024px;
-  background-image: url(../assets/sign-up-background-image.png);
+  background-image: url('../assets/sign-up-background-image.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -19,7 +19,7 @@ main {
   width: 276px;
   height: 104px;
   margin-bottom: 21px;
-  background-image: url(../assets/sign-up-icon.png);
+  background-image: url('../assets/sign-up-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

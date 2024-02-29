@@ -1,7 +1,17 @@
+body {
+  padding-top: 104px;
+}
+
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
+  background-color: white;
   border-bottom: 1px solid var(--grey);
+  z-index: 999;
 }
 
 .header {
@@ -10,6 +20,7 @@ header {
   align-items: center;
   width: 1106px;
   height: 104px;
+  background-color: white;
 }
 
 .header .icon {
@@ -21,27 +32,35 @@ header {
   background-position: center;
 }
 
-.header nav {
+.header nav ul {
   display: flex;
   justify-content: space-between;
-  width: 265px;
-  height: 20px;
+  list-style: none;
+  width: 295px;
 }
 
-.header nav a {
-  color: var(--black);
-  text-decoration: none;
+.header nav ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.header .hamburger-menu {
-  width: 24px;
-  height: 24px;
-  margin-top: 14px;
-  background-image: url('../assets/hamburger-menu.png');
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
-  display: none;
+.header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  right: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transition: 0.3s ease-in-out;
+}
+
+.header nav ul li a:hover:after {
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .header .sign-in-sign-up {
@@ -51,35 +70,70 @@ header {
   height: 48px;
 }
 
+.header .hamburger-menu {
+  width: 24px;
+  height: 24px;
+  margin: 14px 24px 0 142px;
+  background-image: url('../assets/hamburger-menu.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  display: none; 
+}
+
+.header aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 150vh;
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.header .close-menu {
+  position: absolute;
+  top: 43px;
+  right: 58px;
+}
+
+.header aside ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 120px;
+  height: 250px;
+}
+
+.header aside li {
+  display: block;
+  margin-right: 80px;
+}
+
+.header aside a:hover {
+  background-color: var(--hover-color)
+}
+
 .header .sign-in,
 .header .sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 86px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 400;
+  background-color: white;
   border: 1px solid var(--blue); 
   border-radius: 5px;
 }
 
-.header .sign-in {
-  color: var(--blue);
-  background-color: white;
-}
-
-.header .sign-up {
+.header .sign-in:hover,
+.header .sign-up:hover {
   color: white;
   background-color: var(--blue);
-}
-
-.header .sign-in a,
-.header .sign-up a {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.header .sign-in a:visited {
-  color: var(--blue);
-}
-
-.header .sign-up a:visited {
-  color: white;
 }
 
 main {
@@ -272,9 +326,14 @@ main .recommended .sub-title {
 }
 
 main .recommended .movies {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+main .recommended .movies .slider {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin-bottom: 38px;
 }
 
@@ -470,11 +529,25 @@ main .upcoming .sub-title .back-next-arrows .back {
 main .upcoming .sub-title .back-next-arrows .next {
   background-image: url('../assets/next-arrow.png');
 }
+  
+
+main .upcoming .sub-title .back-next-arrows .back:active {
+  background-image: url('../assets/back-arrow-clicked.png');
+}
+main .upcoming .sub-title .back-next-arrows .next:active {
+  background-image: url('../assets/next-arrow-clicked.png');
+}
 
 main .upcoming .movies {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+main .upcoming .movies .slider {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  margin-bottom: 38px;
 }
 
 main .upcoming .movies .movie .movie-image {
@@ -757,6 +830,26 @@ footer .link .follow-us nav a .youtube {
   background-image: url('../assets/youtube-icon.png');
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
   .header {
     margin: 0 24px;
@@ -767,15 +860,14 @@ footer .link .follow-us nav a .youtube {
     height: 37px;
   }
 
-  .header nav,
+  .header .pages,
   .header .sign-in,
   .header .sign-up {
     display: none;
   }
 
   .header .hamburger-menu {
-    display: block;
-    margin-left: 160px;
+    display: flex;
   }
 
   main {

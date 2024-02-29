@@ -53,33 +53,22 @@ header {
 
 .header .sign-in,
 .header .sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 86px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 400;
+  background-color: white;
   border: 1px solid var(--blue); 
   border-radius: 5px;
 }
 
-.header .sign-in {
-  color: var(--blue);
-  background-color: white;
-}
-
-.header .sign-up {
+.header .sign-in:hover,
+.header .sign-up:hover {
   color: white;
   background-color: var(--blue);
-}
-
-.header .sign-in a,
-.header .sign-up a {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.header .sign-in a:visited {
-  color: var(--blue);
-}
-
-.header .sign-up a:visited {
-  color: white;
 }
 
 @keyframes buttonClicked {

@@ -24,8 +24,10 @@
   --lighter-grey: rgb(252, 253, 254);
   --blue: rgb(29, 78, 216);
   --light-blue: rgb(37, 99, 235);
+  --hover-color: rgba(240,240,240, 0.5)
 }
 
 a {
+  color: var(--black);
   text-decoration: none;
 }
