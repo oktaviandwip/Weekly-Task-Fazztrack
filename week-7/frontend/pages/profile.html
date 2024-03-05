@@ -127,10 +127,10 @@
     </div>
 
     <!-- Account Settings -->
-    <form class="md:w-[600px] lg:w-[866px] h-[1000px] overflow-y-hidden bg-blue">
+    <form class="md:w-[600px] lg:w-[866px] h-[1000px] overflow-y-hidden">
       
       <!-- Header -->
-      <div class="flehiddenems-center w-[100%] h-16 text-lg rounded-[16px] bg-white">
+      <div class="flehiddenems-center w-[100%] h-16 text-lg rounded-[16px] bg-white mb-12">
         <div class="flex md:w-[50%] lg:w-[40%] justify-between ml-10">
           <div class="account-settings border-b-2 border-blue py-[17px]">Account Settings</div>
           <div class="order-history border-b-2 border-white text-darkest-grey py-[17px]">Order History</div>
@@ -192,7 +192,7 @@
 
       <!-- Order History -->
       <!-- First -->
-      <div class="flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white">
+      <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
         <div class="w-[730px] h-16 flex justify-between mx-auto">
           <div class="flex flex-col justify-between">
             <div class="text-darker-grey text-sm text-wide">Tuesday, 07 July 2020 - 04:30pm</div>
@@ -206,15 +206,50 @@
             <button class="w-[196px] h-10 bg-green bg-opacity-20 rounded-md text-green font-bold mr-4 text-wide">Ticket in active</button>
             <button class="w-[171px] h-10 bg-red bg-opacity-20 rounded-md text-red font-bold text-wide">Not Paid</button>
           </div>
-          <div class="show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey"></div>
-        </div>
-      </div>
-      <div class="h-[361px] -mt-[21px] rounded-b-xl bg-white">
+          <div class="show-details relative flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details<img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
 
+            <!-- Ticket Information -->
+            <div class="hidden ticket-information absolute top-[96px] -left-[675px] w-[872px] h-[361px] -mt-[21px] rounded-b-3xl bg-white tracking-wide">
+              <div class="flex flex-col justify-between w-[730px] h-[324px] mx-auto py-5">
+                <div class="text-lg text-black tracking-wide">Ticket Information</div>
+
+                <!-- No. Rekening Virtual -->
+                <div class="flex justify-between items-center ">
+                  <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+                    <div>No. Rekening Virtual</div>
+                    <div>:</div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-lg font-bold mr-5 text-black">12321328913829724</div>
+                    <button class="border-1 border-blue rounded-md w-[72px] h-[48px] text-blue transform active:scale-90 active:opacity-75 transition-transform">Copy</button>
+                  </div>
+                </div>
+
+                <!-- Total Payment -->
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+                    <div>Total Payment</div>
+                    <div>:</div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-lg font-bold text-blue">$30</div>
+                  </div>
+                </div>
+
+                
+                <!-- Due Date -->
+                <div class="text-darkest-grey tracking-widest text-justify">Pay this payment bill before it is due, on <span class="text-red">June 23, 2023</span>. If the bill has not been paid by the specified time, it will be forfeited</div>
+
+                <!-- Cek Pembayaran -->
+                <button class="w-[191px] h-[48px] text-white rounded-md bg-blue shadow-md transform active:scale-90 active:opacity-75 transition-transform">Cek Pembayaran</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Second -->
-      <div class="flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white">
+      <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
         <div class="w-[730px] h-16 flex justify-between mx-auto">
           <div class="flex flex-col justify-between">
             <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
@@ -233,7 +268,7 @@
       </div>
 
       <!-- Third -->
-      <div class="flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white">
+      <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
         <div class="w-[730px] h-16 flex justify-between mx-auto">
           <div class="flex flex-col justify-between">
             <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
@@ -301,15 +336,30 @@
       }
     })
 
-    const showDetailsButtons = document.querySelectorAll('.show-details');
+    const tickets = document.querySelectorAll('.ticket')
+    const showDetails = document.querySelectorAll('.show-details');
     showDetails.forEach(detail => {
       detail.addEventListener('click', () => {
-        const dropdownGrey = this.querySelector('.dropdown-grey');
+        const dropdownGrey = detail.querySelector('.dropdown-grey');
+        const ticketInformation = detail.querySelector('.ticket-information')
+
+        ticketInformation.classList.toggle('mb-[280px]')
         dropdownGrey.classList.toggle('rotate-180');
+
+        if (dropdownGrey.classList.contains('rotate-180')) {
+          ticketInformation.classList.remove('hidden')
+          tickets.forEach(ticket => {
+            ticket.classList.add('mb-[370px]')
+          })
+        } else {
+          ticketInformation.classList.add('hidden')
+          tickets.forEach(ticket => {
+            ticket.classList.remove('mb-[370px]')
+          })
+        }
+
       });
     });
-    
-
   </script>
 </body>
 </html>
