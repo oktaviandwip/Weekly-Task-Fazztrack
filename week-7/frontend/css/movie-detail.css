@@ -1,0 +1,784 @@
+body {
+  padding-top: 104px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-bottom: 1px solid var(--grey);
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1106px;
+  height: 104px;
+  background-color: white;
+}
+
+.header .icon {
+  width: 130px;
+  height: 51px;
+  background-image: url('../assets/tickitz-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 295px;
+}
+
+.header nav ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  right: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transition: 0.3s ease-in-out;
+}
+
+.header nav ul li a:hover:after {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.header .sign-in-sign-up {
+  display: flex;
+  justify-content: space-between;
+  width: 185px;
+  height: 48px;
+}
+
+.header .hamburger-menu {
+  width: 24px;
+  height: 24px;
+  margin: 14px 24px 0 142px;
+  background-image: url('../assets/hamburger-menu.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  display: none; 
+}
+
+.header aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 150vh;
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.header .close-menu {
+  position: absolute;
+  top: 43px;
+  right: 58px;
+}
+
+.header aside ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 120px;
+  height: 250px;
+}
+
+.header aside li {
+  display: block;
+  margin-right: 20px;
+}
+
+.header aside a:hover {
+  background-color: var(--hover-color)
+}
+
+.header .sign-in,
+.header .sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 400;
+  background-color: white;
+  border: 1px solid var(--blue); 
+  border-radius: 5px;
+}
+
+.header .sign-in:hover,
+.header .sign-up:hover {
+  color: white;
+  background-color: var(--blue);
+}
+
+@keyframes buttonClicked {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.header .sign-in:active,
+.header .sign-up:active{
+  animation: buttonClicked 0.3s ease-in-out;
+}
+
+.hero {
+  width: 1366px;
+  height: 415px;
+  margin: 0 auto;
+  background-image: url('../assets/spiderman-detail.png');
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 1106px;
+  margin: 0 auto;
+} 
+
+main .details {
+  display: flex;
+  width: 100%;
+}
+
+main .details .movie-image {
+  width: 264px;
+  height: 405px;
+  margin: -163px 19px 0 0;
+  border-radius: 6px;
+  background-image: url('../assets/spiderman-homecoming.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+main .details .detail .name {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 1px;
+  margin: 19px 0 23px 0;
+}
+
+main .details .detail .genres span {
+  padding: 8px 18px;
+  margin-right: 7px;
+  border-radius: 20px;
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--light-grey);
+}
+
+main .details .detail .information {
+  display: flex;
+  height: 128px;
+}
+
+main .details .detail .information .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main .details .detail .information .title {
+  color: var(--dark-grey);
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 19px;
+  letter-spacing: 0.75px;
+  line-height: 24px;
+}
+
+main .details .detail .information .desc {
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+main .details .detail .information .left.info {
+  width: 160px;
+  margin-right: 60px;
+}
+
+main .synopsis {
+  width: 821px;
+  margin: 32px 0 55px 0;
+}
+
+main .synopsis .title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 34px;
+}
+
+main .synopsis .desc {
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+  line-height: 32px;
+}
+
+main .book-tickets {
+  width: 100%;
+}
+
+main .book-tickets .title {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 45px;
+}
+
+main .book-tickets .details {
+  display: flex;
+  justify-content: space-between;
+  margin: 38px 0;
+}
+
+main .book-tickets .details .date,
+main .book-tickets .details .time, 
+main .book-tickets .details .location {
+  position: relative;
+}
+
+main .book-tickets .details .title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 34px;
+  margin-bottom: 12px;
+}
+
+main .book-tickets .details label {
+  position: absolute;
+  top: 63px;
+  left: 23px;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  cursor: pointer;
+}
+
+main .book-tickets .details .date label {
+  background-image: url('../assets/calendar-icon.png');
+}
+
+main .book-tickets .details .time label {
+  background-image: url('../assets/time-icon.png');
+}
+
+main .book-tickets .details .location label {
+  background-image: url('../assets/location-icon.png');
+}
+
+main .book-tickets .details .background-input {
+  width: 284px;
+  height: 56px;
+  background-color: var(--bright-grey);
+}
+
+main .book-tickets .details input,
+main .book-tickets .details select {
+  position: absolute;
+  top: 46px;
+  width: 284px;
+  height: 56px;
+  padding: 0 30px 0 66px;
+  color: var(--light-black);
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+main .book-tickets .details .date input[type=date]::-webkit-calendar-picker-indicator,
+main .book-tickets .details .time input[type=time]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+main .book-tickets .details .location select {
+  -webkit-appearance: none;
+}
+
+main .book-tickets .details .drop-down {
+  position: absolute;
+  top: 65px;
+  right: 32px;
+  padding: 9px;
+  background-image: url('../assets/drop-down-icon.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  cursor: pointer;
+}
+
+main .book-tickets button {
+  width: 188px;
+  height: 56px;
+  margin-top: 46px;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--blue);
+}
+
+@keyframes buttonClicked {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+main .book-tickets button:active {
+  animation: buttonClicked 0.3s ease-in-out;
+}
+
+main .book-tickets .choose-cinema {
+  width: 1106px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .book-tickets .choose-cinema .header {
+  display: flex;
+  justify-content: flex-start;
+  height: 34px;
+}
+
+main .book-tickets .choose-cinema .header .title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 34px;
+  margin-right: 34px;
+}
+
+main .book-tickets .choose-cinema .header .result {
+  color: var(--dark-grey);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.75px;
+}
+
+main .book-tickets .choose-cinema .cinemas {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main .book-tickets .choose-cinema .cinemas .cinema {
+  width: 264px;
+  height: 157px;
+  margin: 38px 0;
+  border: 2px solid var(--grey);
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+main .book-tickets .choose-cinema .cinemas .cinema.one {
+  background-image: url('../assets/ebv-id.png');
+}
+main .book-tickets .choose-cinema .cinemas .cinema.two:active {
+  background-image: url('../assets/hiflix-clicked.png');
+}
+
+main .book-tickets .choose-cinema .cinemas .cinema.two {
+  background-image: url('../assets/hiflix.png');
+}
+
+main .book-tickets .choose-cinema .cinemas .cinema.three {
+  background-image: url('../assets/CineOne21.png');
+}
+
+main .book-tickets .choose-cinema .cinemas .cinema.four {
+  background-image: url('../assets/ebv-id.png');
+}
+
+main .book-tickets .choose-cinema .pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+main .book-tickets .choose-cinema .pagination div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  border: 0.5px solid var(--grey);
+  border-radius: 8px;
+}
+
+main .book-tickets .choose-cinema .pagination div:active {
+  color: white;
+  background-color: var(--blue);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1106px;
+  height: 439px;
+  margin: 0 auto;
+}
+
+footer .link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 279px;
+}
+
+footer .link .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 16px 0 22px 0;
+}
+
+footer .link .tagline {
+  display: flex;
+  flex-direction: column;
+  width: 284px;
+}
+
+footer .link .tagline .icon {
+  width: 184px;
+  height: 72px;
+  margin-bottom: 16px;
+  background-image: url('../assets/tickitz-icon-2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+
+footer .link .tagline .text {
+  color: var(--darkest-grey);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+footer .link .explore nav,
+footer .link .our-sponsor nav,
+footer .link .follow-us nav {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .link .explore nav a,
+footer .link .follow-us nav a,
+footer .copyright {
+  color: var(--darkest-grey);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+footer .link .our-sponsor nav a .ebv-id,
+footer .link .our-sponsor nav a .cine-one-21,
+footer .link .our-sponsor nav a .hiflix,
+footer .link .follow-us nav a .facebook,
+footer .link .follow-us nav a .instagram,
+footer .link .follow-us nav a .twitter,
+footer .link .follow-us nav a .youtube {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+footer .link .explore nav a,
+footer .link .our-sponsor nav a,
+footer .link .follow-us nav a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+footer .link .explore nav a {
+  margin-bottom: 14px;
+}
+
+footer .link .our-sponsor nav a .ebv-id {
+  width: 122px;
+  height: 46px;
+  background-image: url('../assets/ebv-id.png');
+}
+
+footer .link .our-sponsor nav a .cine-one-21 {
+  width: 174px;
+  height: 28px;
+  background-image: url('../assets/CineOne21.png');
+}
+
+footer .link .our-sponsor nav a .hiflix {
+  width: 80px;
+  height: 26px;
+  background-image: url('../assets/hiflix.png');
+}
+
+footer .link .follow-us nav a div {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+footer .link .follow-us nav a .facebook {
+  background-image: url('../assets/facebook-icon-2.png');
+}
+
+footer .link .follow-us nav a .instagram {
+  background-image: url('../assets/instagram-icon.png');
+}
+
+footer .link .follow-us nav a .twitter {
+  background-image: url('../assets/twitter-icon.png');
+}
+
+footer .link .follow-us nav a .youtube {
+  background-image: url('../assets/youtube-icon.png');
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    margin: 0 24px;
+  }
+
+  .header .icon {
+    width: 93px;
+    height: 37px;
+  }
+
+  .header .pages,
+  .header .sign-in,
+  .header .sign-up {
+    display: none;
+  }
+
+  .header .hamburger-menu {
+    display: flex;
+  }
+
+
+  .hero {
+    width: 375px;
+    height: 475px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+  }
+
+  main {
+    width: 327px;
+  }
+
+  main .details {
+    flex-direction: column;
+  }
+
+  main .details .movie-image {
+    width: 327px;
+    height: 502px;
+    margin-top: -334px;
+  }
+
+  main .details .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 327px;
+  }
+
+  main .details .detail .name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.75px;
+  }
+
+  main .details .detail .information {
+    width: 327px;
+    height: 172px;
+  }
+
+  main .details .detail .information .left.info {
+    margin-right: 30px;
+  }
+
+  main .details .detail .information .right {
+    width: 190px;
+  }
+
+  main .synopsis {
+    width: 327px;
+    margin: 64px 0 55px 0;
+  }
+
+  main .book-tickets .details .background-input {
+    width: 327px;
+    margin-bottom: 12px;
+  }
+
+  main .book-tickets .details input,
+  main .book-tickets .details select {
+    width: 327px;
+  }
+
+  main .book-tickets button {
+    width: 327px;
+    margin-top: 12px;
+  }
+
+  main .book-tickets .choose-cinema {
+    width: 327px;
+  }
+
+  main .book-tickets .choose-cinema .header {
+    width: 327px;
+    justify-content: center;
+  }
+
+  main .book-tickets .choose-cinema .cinemas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .book-tickets .choose-cinema .cinemas .cinema {
+    margin-bottom: 0px;
+  }
+
+  main .book-tickets .choose-cinema .pagination {
+    margin: 30px 0 20px;
+  }
+
+  footer {
+    width: 375px;
+    height: 716px;
+    margin-top: 100px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  footer .link {
+    flex-direction: column;
+    margin-left: 24px;
+  }
+
+  footer .link .tagline .icon {
+    width: 153px;
+    height: 60px;
+  }
+
+  footer .link .tagline .text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  footer .link .tagline, 
+  footer .link .explore,
+  footer .link .our-sponsor,
+  footer .link .follow-us {
+    margin-bottom: 24px;
+  }
+
+  footer .link .explore nav,
+  footer .link .our-sponsor nav,
+  footer .link .follow-us nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 327px;
+  }
+
+  footer .link .explore nav a {
+    margin-right: 40px;
+  }
+
+  footer .link .our-sponsor nav {
+    justify-content: space-between;
+  }
+
+  footer .link .our-sponsor nav a .ebv-id,
+  footer .link .our-sponsor nav a .cine-one-21,
+  footer .link .our-sponsor nav a .hiflix {
+    width: 81px;
+    height: 30px;
+    margin-right: 24px;
+  }
+
+  footer .link .our-sponsor nav a .cine-one-21 {
+    margin-top: 10px;
+  }
+
+  footer .link .follow-us nav a {
+    margin-right: 16px;
+  }
+
+  footer .link .follow-us nav a p {
+    display: none;
+  }
+
+  footer .copyright {
+    margin-top: 300px;
+    margin-left: 24px;
+  }
+}

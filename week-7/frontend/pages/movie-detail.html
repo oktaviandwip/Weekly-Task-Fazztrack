@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/movie-detail.css">
+    <title>Movie Detail</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <a href="./index.html">
+          <div class="icon"></div>
+        </a>
+        <nav class="pages">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Movie</a></li>
+            <li><a href="#">Buy Ticket</a></li>
+          </ul>
+        </nav>
+        <nav class="sign-in-sign-up">
+          <div class="hamburger-menu"></div>
+          <aside class="sidebar">
+            <img class="close-menu" src="./assets/close-menu.svg" alt="Close menu">
+            <ul>
+              <li><a href="./sign-in.html">Sign Up</a></li>
+              <li><a href="./sign-in.html">Sign In</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="#">Movie</a></li>
+              <li><a href="#">Buy Ticket</a></li>
+            </ul> 
+          </aside>
+          <a href="./sign-in.html" class="sign-in">Sign In</a>
+          <a href="./sign-up.html" class="sign-up">Sign Up</a>
+        </nav>
+      </div>
+    </header>
+    <div class="hero"></div>
+    <main>
+      <div class="details">
+        <div class="movie-image"></div>
+        <div class="detail">
+          <div class="name">Spider-Man: Homecoming</div>
+          <div class="genres"><span>Action</span><span>Adventure</span></div>
+          <div class="information">
+            <div class="left info">
+              <p class="release-date title">Release Date</p>
+              <div class="release-date desc">June 28, 2017</div>
+              <div class="duration title">Duration</div>
+              <div class="duration desc">2 hours 13 minutes</div>
+            </div>
+            <div class="right info">
+              <div class="directed-by title">Directed by</div>
+              <div class="directed-by desc">Jon Watss</div>
+              <div class="casts title">Casts</div>
+              <div class="casts desc">Tom Holland, Michael Keaton, Robert Downey Jr</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="synopsis">
+        <div class="title">Synopsis</div>
+        <div class="desc">
+          Thrilled by his experience with the Avengers, Peter returns home, where he lives with his Aunt May, under the watchful eye of his new mentor Tony Stark, Peter tries to fall back into his normal daily routine - distracted by thoughts of proving himself to be more than just your friendly neighborhood Spider-Man - but when the Vulture emerges as a new villain, everything that Peter holds most important will be threatened.
+        </div>
+      </div>
+      <form class="book-tickets">
+        <div class="title">Book Tickets</div>
+        <div class="details">
+          <div class="date">
+            <div class="title">Choose Date</div>
+            <div class="background-input"></div>
+            <label for="date"></label> 
+            <div class="drop-down"></div>
+            <input type="date" id="date" value="2024-02-28">
+          </div>
+          <div class="time">
+            <div class="title">Choose Time</div>
+            <div class="background-input"></div>
+            <label for="time"></label>
+            <div class="drop-down"></div>
+            <input type="time" id="time" value="08:30">
+          </div>
+          <div class="location">
+            <div class="title">Choose Location</div>
+            <div class="background-input"></div>
+            <label for="location"></label>
+            <div class="drop-down"></div>
+            <select id="location">
+              <option value="purwokerto">Purwokerto</option>
+              <option value="banjarnegara">Banjarnegara</option>
+              <option value="purbalingga">Purbalingga</option>
+              <option value="wonosobo">Wonosobo</option>
+              <option value="kebumen">Kebumen</option>
+              <option value="magelang">Magelang</option>
+              <option value="temanggung">Temanggung</option>
+            </select>
+          </div>
+          <button type="submit">Filter</button>
+        </div>
+        <div class="choose-cinema">
+          <div class="header">
+            <div class="title">Choose Cinema</div>
+            <div class="result">39 Result</div>
+          </div>
+          <div class="cinemas">
+            <div class="cinema one"></div>
+            <div class="cinema two"></div>
+            <div class="cinema three"></div>
+            <div class="cinema four"></div>
+          </div>
+          <div class="pagination">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+          </div>
+          <button type="submit">Book Now</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="link">
+        <div class="tagline">
+          <div class="icon"></div>
+          <div class="text">
+            Stop waiting in line. Buy tickets conveniently, watch movies
+            quietly.
+          </div>
+        </div>
+
+        <div class="explore">
+          <div class="title">Explore</div>
+          <nav>
+            <a href="#">Cinemas</a>
+            <a href="#">Movies List</a>
+            <a href="#">My ticket</a>
+            <a href="#">Notification</a>
+          </nav>
+        </div>
+
+        <div class="our-sponsor">
+          <div class="title">Our Sponsor</div>
+          <nav>
+            <a href="#"><div class="ebv-id"></div></a>
+            <a href="#"><div class="cine-one-21"></div></a>
+            <a href="#"><div class="hiflix"></div></a>
+          </nav>
+        </div>
+
+        <div class="follow-us">
+          <div class="title">Follow us</div>
+          <nav>
+            <a href="#"
+              ><div class="facebook"></div>
+              <p>Tickitz Cinema id</p>
+              </a
+            >
+            <a href="#"
+              ><div class="instagram"></div>
+              <p>tickitz.id</p>
+              </a
+            >
+            <a href="#"
+              ><div class="twitter"></div>
+              <p>tickitz.id</p>
+              </a
+            >
+            <a href="#"
+              ><div class="youtube"></div>
+              <p>Tickitz Cinema id</p>
+              </a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <div class="copyright">© 2020 Tickitz. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+      const closeMenu = document.querySelector('.close-menu')
+      const hamburgerMenu = document.querySelector('.hamburger-menu')
+      const sidebar = document.querySelector('.sidebar')
+      hamburgerMenu.addEventListener('click', () => {
+        sidebar.style.display = 'flex'
+      })
+      closeMenu.addEventListener('click', () => {
+        sidebar.style.display = 'none'
+      })
+    </script>
+  </body>
+</html>

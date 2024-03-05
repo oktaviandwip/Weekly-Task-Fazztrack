@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../src/output.css" rel="stylesheet">
+  <title>Profile</title>
+</head>
+<body class="bg-dark-grey bg-opacity-20 text-sm font-mulish pt-[200px] pb-[104px] md:py-[104px]">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex items-center z-50">
+    <div class="flex w-[1106px] justify-between items-center mx-6 xl:mx-auto">
+      <img src="../assets/tickitz-icon.svg" alt="tickitz icon">
+      <nav class="w-[265px] hidden md:flex justify-between">
+        <a href="./index.html">Home</a>
+        <a href="./movie-list.html">Movie</a>
+        <a href="#">Buy Ticket</a>
+      </nav>
+      <nav class="w-[200px] hidden md:flex justify-between items-center">
+        <div class="">Location</div>
+        <img src="../assets/dropdown.svg" alt="dropdown">
+        <img src="../assets/search-profile.svg" alt="search profile">
+        <img src="../assets/photo-profile.svg" alt="photo profile">
+      </nav>
+      <img class="hamburger-menu flex md:hidden" src="../assets/hamburger-menu.svg" alt="hamburger menu">
+      <aside class="sidebar fixed top-0 bottom-0 right-0 w-[200px] translate-x-64 flex-col bg-white shadow-md transition-transform duration-300">
+        <img class="close-menu absolute top-10 right-6" src="../assets/close-menu.svg" alt="close menu">
+        <ul class="h-44 flex flex-col justify-between items-center mt-32">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Movie</a></li>
+          <li><a href="#">Buy Ticket</a></li>
+          <li><a href="#" class="flex items-center w-[40px] rounded-full shadow-md"><img src="../assets/photo-profile.svg" alt="photo profile"></a></li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch md:w-[950px] lg:w-[1226px] mx-auto md:mt-14">
+    <!-- Header Mobile -->
+    <div class="flex fixed top-[104px] md:hidden items-center w-[100%] h-16 text-base bg-white mb-14 md:mb-0">
+      <div class="flex w-[80%] md:w-[50%] lg:w-[40%] justify-between ml-10">
+        <div class="border-b-2 border-blue py-5">Details Account</div>
+        <div class="text-darkest-grey py-5">Order History</div>
+      </div>
+    </div>
+
+    <!-- Form Mobile -->
+    <form class="form-mobile hidden w-[328px] h-[935px] md:hidden flex-col justify-center items-center bg-white rounded-[24px] shadow-outset">
+      <div class="w-[248px] h-[860px]">
+        <div class="flex font-bold text-2xl tracking-wide mb-6">Account Settings</div>
+        <div class="flex text-base tracking-wide border-b pb-4">Details Information</div>
+        <div class="grid grid-cols-1 w-[100%] mt-6">
+          <div class="h-[81px] flex flex-col justify-between mb-3">
+            <div class="text-base text-darkest-grey tracking-wide">First Name</div>
+            <input type="text" class=" outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey" placeholder="Enter your first name">
+          </div>
+          <div class="h-[81px] flex flex-col justify-between mb-3">
+            <div class="text-base text-darkest-grey tracking-wide">Last Name</div>
+            <input type="text" class=" outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey" placeholder="Enter your last name">
+          </div>
+          <div class="h-[81px] flex flex-col justify-between mb-3">
+            <div class="text-base text-darkest-grey tracking-wide">Email</div>
+            <input type="email" class="outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey" placeholder="Enter your email">
+          </div>
+          <div class="h-[81px] flex flex-col justify-between mb-10">
+            <div class="text-base text-darkest-grey tracking-wide">Phone Number</div>
+            <div class="flex md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey">
+              <select class="appearance-none outline-none bg-transparent pr-4 mr-4 border-r-1 border-grey" name="country-code" id="country-code">
+                <option value="+62">+62</option>
+                <option value="+49">+49</option>
+                <option value="+33">+33</option>
+              </select>
+              <input type="text" class="bg-transparent outline-none md:text-sm lg:text-base tracking-wide" placeholder="Enter your phone">
+            </div>
+          </div>
+        </div>
+
+        <!-- Account & Privacy Mobile -->
+        <div class="md:flex items-center w-[100%] h-[297px] rounded-[16px] bg-white">
+          <div class="md:w-[550px] lg:w-[802px] h-[193px] mx-auto">
+            <div class="flex w-[100%] text-base tracking-wide border-b pb-4">Account and Privacy</div>
+            <div class="grid grid-cols-1 mt-4">
+              <div class="relative h-[81px] flex flex-col justify-between mb-3">
+                <div class="text-base text-darkest-grey tracking-wide">New Password</div>
+                <input type="password" class="outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-6 lg:px-11 py-4 bg-lighter-grey" placeholder="Write your password">
+                <img class="absolute top-[45px] right-5" src="../assets/hide-password.svg" alt="hide password">
+              </div>
+              <div class="relative h-[81px] flex flex-col justify-between">
+                <div class="text-base text-darkest-grey tracking-wide">Confirm Password</div>
+                <input type="password" class="outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-6 lg:px-11 py-4 bg-lighter-grey" placeholder="Confirm your password">
+                <img class="absolute top-[45px] right-5" src="../assets/hide-password.svg" alt="hide password">
+              </div>
+            </div>
+          </div>
+          <button class="w-[100%] h-[56px] text-white font-bold rounded-xl bg-blue shadow-md mt-[75px] transform active:scale-90 active:opacity-75 transition-transform">Update changes</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- User -->
+    <div class="user w-[328px] h-[831px] md:h-[783px] flex md:flex flex-col justify-center items-center bg-white rounded-[24px]">
+      <div class="w-[248px] h-[320px]">
+        <!-- Info Title -->
+        <div class="flex justify-between items-center mb-8">
+          <div class="text-darkest-grey">INFO</div>
+          <img src="../assets/three-dots.svg" alt="three dots">
+        </div>
+        <!-- Profile -->
+        <div class="flex flex-col justify-between items-center">
+          <img class="w-[136px] rounded-full shadow-lg" src="../assets/photo-profile.svg" alt="three dots">
+          <div class="font-semibold text-xl mt-8">Jonas El Rodriguez</div>
+          <div class="text-sm text-darkest-grey">Moviegoers</div>
+        </div>
+      </div>
+      <!-- Horizontal Line -->
+      <div class="flex w-[100%] mb-10 border-b"></div>
+      <div class="w-[248px] h-[320px]">
+        <!-- Loyalty Points -->
+        <div class="flex flex-col justify-between items-center mb-8">
+          <div class="w-[95%] text-darkest-grey text-left text-wide font-semibold">Loyalty Points</div>
+          <div class="bg-[url('../assets/loyalty-points.svg')] bg-no-repeat w-[289px] h-[150px]  my-6"></div>
+          <div class="text-darkest-grey mb-2">180 points become a master</div>
+          <img src="../assets/loyalty-progress.svg" alt="loyalty progress">
+        </div>
+        <button class="edit-profile block md:hidden w-[100%] h-[56px] border-1 border-blue text-blue font-bold rounded-xl transform active:scale-90 active:opacity-75 transition-transform">Edit Profile</button>
+      </div>
+    </div>
+
+    <!-- Account Settings -->
+    <form class="md:w-[600px] lg:w-[866px] h-[1000px] overflow-y-hidden bg-blue">
+      
+      <!-- Header -->
+      <div class="flehiddenems-center w-[100%] h-16 text-lg rounded-[16px] bg-white">
+        <div class="flex md:w-[50%] lg:w-[40%] justify-between ml-10">
+          <div class="account-settings border-b-2 border-blue py-[17px]">Account Settings</div>
+          <div class="order-history border-b-2 border-white text-darkest-grey py-[17px]">Order History</div>
+        </div>
+      </div>
+      
+      <!-- Details Information -->
+      <div class="md:hidden flex-col justify-center items-center w-[100%] h-[418px] rounded-[16px] bg-white">
+        <div class="md:w-[550px] lg:w-[802px] h-[315px] mx-auto">
+          <div class="flex text-base tracking-wide border-b pb-4">Details Information</div>
+          <div class="grid grid-cols-2 gap-5 w-[100%] mt-12">
+            <div class="h-[98px] flex flex-col justify-between mb-3">
+              <div class="text-base text-darkest-grey tracking-wide">First Name</div>
+              <input type="text" class=" outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey" placeholder="Enter your first name">
+            </div>
+            <div class="h-[98px] flex flex-col justify-between mb-3">
+              <div class="text-base text-darkest-grey tracking-wide">Last Name</div>
+              <input type="text" class=" outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey" placeholder="Enter your last name">
+            </div>
+            <div class="h-[98px] flex flex-col justify-between mb-3">
+              <div class="text-base text-darkest-grey tracking-wide">Email</div>
+              <input type="email" class="outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey" placeholder="Enter your email">
+            </div>
+            <div class="h-[98px] flex flex-col justify-between mb-12 ">
+              <div class="text-base text-darkest-grey tracking-wide">Phone Number</div>
+              <div class="flex md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-5 md:px-11 py-4 bg-lighter-grey">
+                <select class="appearance-none outline-none bg-transparent pr-4 mr-4 border-r-1 border-grey" name="country-code" id="country-code">
+                  <option value="+62">+62</option>
+                  <option value="+49">+49</option>
+                  <option value="+33">+33</option>
+                </select>
+                <input type="text" class="bg-transparent outline-none md:text-sm lg:text-base tracking-wide" placeholder="Enter your phone">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account & Privacy -->
+      <div class="md:hidden items-center w-[100%] h-[297px] rounded-[16px] bg-white">
+        <div class="md:w-[550px] lg:w-[802px] h-[193px] mx-auto">
+          <div class="flex w-[100%] text-base tracking-wide border-b pb-4">Account and Privacy</div>
+          <div class="grid grid-cols-2 gap-5 mt-12">
+            <div class="relative h-[98px] flex flex-col justify-between mb-3">
+              <div class="text-base text-darkest-grey tracking-wide">New Password</div>
+              <input type="password" class="outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-6 lg:px-11 py-4 bg-lighter-grey" placeholder="Write your password">
+              <img class="absolute top-[60px] right-5" src="../assets/hide-password.svg" alt="hide password">
+            </div>
+            <div class="relative h-[98px] flex flex-col justify-between mb-3">
+              <div class="text-base text-darkest-grey tracking-wide">Confirm Password</div>
+              <input type="password" class="outline-none md:text-sm lg:text-base tracking-wide rounded-md border-1 border-grey px-6 lg:px-11 py-4 bg-lighter-grey" placeholder="Confirm your password">
+              <img class="absolute top-[60px] right-5" src="../assets/hide-password.svg" alt="hide password">
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <button class="hidden justify-center items-center w-[360px] h-[56px] text-white font-bold rounded-[16px] bg-blue shadow-md mb-14 md:mb-0 transform active:scale-90 active:opacity-75 transition-transform">Update changes</button>
+
+      <!-- Order History -->
+      <!-- First -->
+      <div class="flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white">
+        <div class="w-[730px] h-16 flex justify-between mx-auto">
+          <div class="flex flex-col justify-between">
+            <div class="text-darker-grey text-sm text-wide">Tuesday, 07 July 2020 - 04:30pm</div>
+            <div class="text-2xl font-semibold text-wide">Spider-Man: Homecoming</div>
+          </div>
+          <div class="w-[160px] h-[64px] bg-[url('../assets/CineOne21.svg')] bg-contain bg-no-repeat bg-center"></div>
+        </div>
+        <div class="flex w-[100%] border-b mt-10 mb-8"></div>
+        <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
+          <div>
+            <button class="w-[196px] h-10 bg-green bg-opacity-20 rounded-md text-green font-bold mr-4 text-wide">Ticket in active</button>
+            <button class="w-[171px] h-10 bg-red bg-opacity-20 rounded-md text-red font-bold text-wide">Not Paid</button>
+          </div>
+          <div class="show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey"></div>
+        </div>
+      </div>
+      <div class="h-[361px] -mt-[21px] rounded-b-xl bg-white">
+
+      </div>
+
+      <!-- Second -->
+      <div class="flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white">
+        <div class="w-[730px] h-16 flex justify-between mx-auto">
+          <div class="flex flex-col justify-between">
+            <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
+            <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+          </div>
+          <div class="w-[160px] h-[64px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
+        </div>
+        <div class="flex w-[100%] border-b mt-10 mb-8"></div>
+        <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
+          <div>
+            <button class="w-[196px] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-bold mr-4 text-wide">Ticket used</button>
+            <button class="w-[171px] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+          </div>
+          <div class="show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey  text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey"></div>
+        </div>
+      </div>
+
+      <!-- Third -->
+      <div class="flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white">
+        <div class="w-[730px] h-16 flex justify-between mx-auto">
+          <div class="flex flex-col justify-between">
+            <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
+            <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+          </div>
+          <div class="w-[160px] h-[64px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
+        </div>
+        <div class="flex w-[100%] border-b mt-10 mb-8"></div>
+        <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
+          <div>
+            <button class="w-[196px] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-bold mr-4 text-wide">Ticket used</button>
+            <button class="w-[171px] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+          </div>
+          <div class="show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey"></div>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    const menu = document.querySelector('.hamburger-menu')
+    const close = document.querySelector('.close-menu')
+    const sidebar = document.querySelector('.sidebar')
+    menu.addEventListener('click', () => {
+      sidebar.classList.remove('translate-x-64')
+      sidebar.classList.add('translate-x-0')
+    })
+
+    close.addEventListener('click', () => {
+      sidebar.classList.remove('translate-x-0')
+      sidebar.classList.add('translate-x-64')
+    })
+
+    const editProfile = document.querySelector('.edit-profile')
+    const user = document.querySelector('.user')
+    const formMobile = document.querySelector('.form-mobile')
+    editProfile.addEventListener('click', () => {
+      if (formMobile.classList.contains('hidden')) {
+        user.classList.add('hidden')
+        formMobile.classList.remove('hidden')
+        formMobile.classList.add('flex')
+      }
+    })
+
+    const accountSettings = document.querySelector('.account-settings')
+    const orderHistory = document.querySelector('.order-history')
+    accountSettings.addEventListener('click', () => {
+      if (!accountSettings.classList.contains('border-blue')) {
+        orderHistory.classList.remove('border-blue')
+        orderHistory.classList.add('border-white')
+        orderHistory.classList.add('text-darkest-grey')
+        accountSettings.classList.remove('border-white')
+        accountSettings.classList.add('border-blue')
+        accountSettings.classList.remove('text-darkest-grey')
+      }
+    })
+    orderHistory.addEventListener('click', () => {
+      if (!orderHistory.classList.contains('border-blue')) {
+        accountSettings.classList.remove('border-blue')
+        accountSettings.classList.add('border-white')
+        accountSettings.classList.add('text-darkest-grey')
+        orderHistory.classList.remove('border-white')
+        orderHistory.classList.add('border-blue')
+        orderHistory.classList.remove('text-darkest-grey')
+      }
+    })
+
+    const showDetailsButtons = document.querySelectorAll('.show-details');
+    showDetails.forEach(detail => {
+      detail.addEventListener('click', () => {
+        const dropdownGrey = this.querySelector('.dropdown-grey');
+        dropdownGrey.classList.toggle('rotate-180');
+      });
+    });
+    
+
+  </script>
+</body>
+</html>

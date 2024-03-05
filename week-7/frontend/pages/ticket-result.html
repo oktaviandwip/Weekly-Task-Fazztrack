@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../src/output.css" rel="stylesheet">
+  <title>Payment</title>
+</head>
+<body class="bg-dark-grey bg-opacity-20 text-sm font-mulish pt-[104px]">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex items-center z-50">
+    <div class="flex w-[1106px] justify-between items-center mx-6 xl:mx-auto">
+      <img src="../assets/tickitz-icon.svg" alt="tickitz icon">
+      <nav class="w-[265px] hidden md:flex justify-between">
+        <a href="./index.html">Home</a>
+        <a href="./movie-list.html">Movie</a>
+        <a href="#">Buy Ticket</a>
+      </nav>
+      <nav class="w-[185px] hidden md:flex justify-between">
+        <a class="border-1 border-blue rounded-md text-blue px-5 py-3" href="./sign-in.html">Sign In</a>
+        <a class="bg-blue text-white rounded-md px-5 py-3" href="./sign-up.html">Sign Up</a>
+      </nav>
+      <img class="hamburger-menu flex md:hidden" src="../assets/hamburger-menu.svg" alt="hamburger menu">
+      <aside class="sidebar fixed top-0 bottom-0 right-0 w-[200px] translate-x-64 flex-col bg-white shadow-md transition-transform duration-300">
+        <img class="close-menu absolute top-10 right-6" src="../assets/close-menu.svg" alt="close menu">
+        <ul class="h-44 flex flex-col justify-between items-center mt-32">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Movie</a></li>
+          <li><a href="#">Buy Ticket</a></li>
+          <li><a href="./sign-in.html">Sign In</a></li>
+          <li><a href="./sign-up.html">Sign Up</a></li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main class="flex flex-col items-center  md:flex-row">
+    <div class="flex flex-col justify-center items-center md:items-stretch w-[100%] h-[812px] md:w-[600px] lg:w-[800px] md:h-[920px] text-center md:text-left mr-[2.5%] lg:mr-[5%] xl:mr-[12.5%] bg-[url('../assets/thank-you-background.svg')]">
+      <div class="flex flex-col justify-center items-center md:items-stretch mx-auto">
+        <img class="w-[127px] md:w-[276px]" src="../assets/tickitz-icon-white.svg" alt="tickitz icon white">
+        <div class="w-[327px] md:w-[400px] lg:w-[600px] text-3xl md:text-4xl lg:text-5xl text-white font-bold my-6">Thank you For Purchasing</div>
+        <div class="w-[327px] md:w-[400px] lg:w-[571px] text-2xl text-white font-thin mb-6">Lorem ipsum dolor sit amet consectetur. Quam pretium pretium tempor integer sed magna et.</div>
+        <div class="text-xl text-white font-bold">Please Download Your Ticket <span class="ml-6 hidden md:inline-block">&#8594;</span><span class="block md:hidden mt-6">&#8595;</span></div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center items-center w-[357px] mt-16 md:mt-0">
+      <img src="../assets/ticket-result.svg" alt="ticket result">
+      <button class="flex justify-center items-center w-[295px] md:w-[100%] h-12 lg:h-14 rounded-md border-1 border-blue text-blue font-bold mt-6 mb-3 transform active:scale-90 active:opacity-75 transition-transform">
+        <img class="mr-12" src="../assets/download.svg" alt="download button">
+        <div>Download</div>
+      </button>
+      <button class="flex justify-center items-center w-[295px] md:w-[100%] h-12 lg:h-14 bg-blue rounded-md border-1 text-white font-bold shadow-md mb-14 md:mb-0 transform active:scale-90 active:opacity-75 transition-transform">
+        <div>Done</div>
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="flex w-[100%] h-[800px] md:h-[750px] lg:h-[439px] bg-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-[327px] sm:w-[640px] md:w-[768px] lg:w-[1020px] xl:w-[1106px] lg:h-[250px] mx-auto mt-24">
+      <div class="md:ml-16">
+        <img class="-mt-3" src="../assets/tickitz-icon-2.svg" alt="tickitz icon">
+        <div class="w-[252px] text-darkest-grey tracking-wide leading-8 mt-4">Stop waiting in line. Buy tickets conveniently, watch movies quietly.</div>
+      </div>
+      <div class="lg:ml-24">
+        <div class="font-bold tracking-wide">Explore</div>
+        <nav class="grid grid-cols-3 md:flex md:flex-col justify-between h-[114px] text-darkest-grey tracking-wide mt-7">
+          <div href="#">Cinemas</div>
+          <div href="#">Movies List</div>
+          <div href="#">My Ticket</div>
+          <div href="#">Notification</div>
+        </nav>
+      </div>
+      <div class="md:ml-16 lg:ml-0">
+        <div class="font-bold tracking-wide mb-6">Our Sponsor</div>
+        <nav class= "flex flex-row md:flex-col w-[327px] md:w-[100%] justify-between h-[30px] md:h-[114px] text-darkest-grey tracking-wide md:mt-7">
+          <img class="w-[81px] md:w-[122px] md:mb-6" src="../assets/ebv-id.svg" alt="ebv.d">
+          <img class="w-[106px] md:w-[174px] md:mb-6" src="../assets/CineOne21.svg" alt="cineone21">
+          <img class="w-[77px] md:w-[80px]" src="../assets/hiflix.svg" alt="hiflix">
+        </nav>
+      </div>
+      <div>
+        <div class="font-bold tracking-wide mt-8 md:mt-0">Follow Us</div>
+        <nav class="flex flex-row md:flex-col md:justify-between w-[100%] h-[30px] md:h-[114px] text-darkest-grey tracking-wide mt-7">
+          <a class="flex items-center mb-6" href="#">
+            <img class="mr-9 md:mr-0" src="../assets/facebook-icon.svg" alt="facebook icon">
+            <div class="hidden md:block text-sm ml-4">Tickitz Cinema id</div>
+          </a>
+          <a class="flex items-center mb-6" href="#">
+            <img class="mr-9 md:mr-0" src="../assets/instagram-icon.svg" alt="facebook icon">
+            <div class="hidden md:block text-sm ml-4">tickitz.id</div>
+          </a>
+          <a class="flex items-center mb-6" href="#">
+            <img class="mr-9 md:mr-0" src="../assets/twitter-icon.svg" alt="facebook icon">
+            <div class="hidden md:block text-sm ml-4">tickitz.id</div>
+          </a>
+          <a class="flex items-center mb-6" href="#">
+            <img class="mr-9 md:mr-0" src="../assets/youtube-icon.svg" alt="facebook icon">
+            <div class="hidden md:block text-sm ml-4">Tickitz Cinema id</div>
+          </a>
+        </nav>
+      </div>
+      <div class="text-sm md:text-left lg:text-center text-darkest-grey md:col-span-1 lg:col-span-4 md:mt-12 md:ml-16">© 2020 Tickitz. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menu = document.querySelector('.hamburger-menu')
+    const close = document.querySelector('.close-menu')
+    const sidebar = document.querySelector('.sidebar')
+    menu.addEventListener('click', () => {
+      sidebar.classList.remove('translate-x-64')
+      sidebar.classList.add('translate-x-0')
+    })
+
+    close.addEventListener('click', () => {
+      sidebar.classList.remove('translate-x-0')
+      sidebar.classList.add('translate-x-64')
+    })
+  </script>
+</body>
+</html>
