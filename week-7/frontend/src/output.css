@@ -698,8 +698,64 @@ video {
   top: 90px;
 }
 
+.top-\[80px\]{
+  top: 80px;
+}
+
+.-left-\[200px\]{
+  left: -200px;
+}
+
+.-left-\[100px\]{
+  left: -100px;
+}
+
+.-left-\[150px\]{
+  left: -150px;
+}
+
+.-left-\[125px\]{
+  left: -125px;
+}
+
+.top-\[50px\]{
+  top: 50px;
+}
+
+.top-\[600px\]{
+  top: 600px;
+}
+
+.top-\[70px\]{
+  top: 70px;
+}
+
+.-left-\[110px\]{
+  left: -110px;
+}
+
+.-left-\[115px\]{
+  left: -115px;
+}
+
 .z-50{
   z-index: 50;
+}
+
+.z-\[99999\]{
+  z-index: 99999;
+}
+
+.z-40{
+  z-index: 40;
+}
+
+.z-\[9999\]{
+  z-index: 9999;
+}
+
+.z-\[100\]{
+  z-index: 100;
 }
 
 .mx-3{
@@ -725,6 +781,16 @@ video {
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .-mt-3{
@@ -1147,6 +1213,58 @@ video {
   height: 116px;
 }
 
+.h-\[357px\]{
+  height: 357px;
+}
+
+.h-\[211px\]{
+  height: 211px;
+}
+
+.h-\[2357px\]{
+  height: 2357px;
+}
+
+.h-\[px\]{
+  height: px;
+}
+
+.h-\[100px\]{
+  height: 100px;
+}
+
+.h-\[200px\]{
+  height: 200px;
+}
+
+.h-\[170px\]{
+  height: 170px;
+}
+
+.h-\[475px\]{
+  height: 475px;
+}
+
+.h-\[450px\]{
+  height: 450px;
+}
+
+.h-\[470px\]{
+  height: 470px;
+}
+
+.h-\[400px\]{
+  height: 400px;
+}
+
+.h-\[52px\]{
+  height: 52px;
+}
+
+.h-\[367px\]{
+  height: 367px;
+}
+
 .w-\[100\%\]{
   width: 100%;
 }
@@ -1335,6 +1453,38 @@ video {
   width: 584px;
 }
 
+.w-\[375px\]{
+  width: 375px;
+}
+
+.w-\[279px\]{
+  width: 279px;
+}
+
+.w-\[300px\]{
+  width: 300px;
+}
+
+.w-\[144px\]{
+  width: 144px;
+}
+
+.w-\[237px\]{
+  width: 237px;
+}
+
+.w-\[240px\]{
+  width: 240px;
+}
+
+.w-\[245px\]{
+  width: 245px;
+}
+
+.w-\[250px\]{
+  width: 250px;
+}
+
 .translate-x-0{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1397,6 +1547,10 @@ video {
 
 .items-center{
   align-items: center;
+}
+
+.justify-start{
+  justify-content: flex-start;
 }
 
 .justify-center{

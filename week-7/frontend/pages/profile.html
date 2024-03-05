@@ -8,7 +8,7 @@
 </head>
 <body class="bg-dark-grey bg-opacity-20 text-sm font-mulish pt-[200px] pb-[104px] md:py-[104px]">
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex items-center z-50">
+  <header class="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex items-center z-[100]">
     <div class="flex w-[1106px] justify-between items-center mx-6 xl:mx-auto">
       <img src="../assets/tickitz-icon.svg" alt="tickitz icon">
       <nav class="w-[265px] hidden md:flex justify-between">
@@ -37,18 +37,20 @@
 
   <main class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch md:w-[950px] lg:w-[1226px] mx-auto md:mt-14">
     <!-- Header Mobile -->
-    <div class="flex fixed top-[104px] md:hidden items-center w-[100%] h-16 text-base bg-white mb-14 md:mb-0 z-50">
+    <div class="flex fixed top-[104px] md:hidden items-center w-[100%] h-16 text-base bg-white mb-14 md:mb-0 z-40">
       <div class="flex w-[80%] md:w-[50%] lg:w-[40%] justify-between ml-10">
-        <div class="border-b-2 border-blue py-5">Details Account</div>
-        <div class="text-darkest-grey py-5">Order History</div>
+        <div class="details-account-header-mobile border-b-2 border-blue py-[18px]">Details Account</div>
+        <div class="order-history-header-mobile text-darkest-grey border-b-2 border-white py-[18px]">Order History</div>
       </div>
     </div>
 
     <!-- Form Mobile -->
-    <form class="form-mobile hidden w-[328px] h-[935px] md:hidden flex-col justify-center items-center bg-white rounded-[24px] shadow-outset">
-      <div class="w-[248px] h-[860px]">
+    <form class="relative form-mobile hidden w-[328px] h-[935px] flex-col justify-center items-center bg-white rounded-[24px] shadow-outset z-50">
+      <div class="w-[248px] h-[860px] md:hidden">
         <div class="flex font-bold text-2xl tracking-wide mb-6">Account Settings</div>
         <div class="flex text-base tracking-wide border-b pb-4">Details Information</div>
+
+        <!-- Input Mobile -->
         <div class="grid grid-cols-1 w-[100%] mt-6">
           <div class="h-[81px] flex flex-col justify-between mb-3">
             <div class="text-base text-darkest-grey tracking-wide">First Name</div>
@@ -97,6 +99,212 @@
       </div>
     </form>
 
+    <!-- Order History Mobile -->
+    <div class="hidden md:hidden order-history-mobile w-[375px]">
+      <!-- First -->
+      <div class="mobile flex flex-col justify-center items-center w-[100%] h-[357px] rounded-[16px] bg-white mb-6">
+        <div class="w-[300px] h-[116px] flex flex-col justify-between mx-auto">
+          <div class="w-[160px] h-[64px] bg-[url('../assets/CineOne21.svg')] bg-contain bg-no-repeat bg-center"></div>
+          <div class="flex flex-col justify-between">
+            <div class="text-darker-grey text-sm text-wide">Tuesday, 07 July 2020 - 04:30pm</div>
+            <div class="text-2xl font-semibold text-wide">Spider-Man: Homecoming</div>
+          </div>
+        </div>
+        <div class="flex w-[100%] border-b my-6"></div>
+        <div class="w-[300px] h-[170px] flex flex-col justify-between items-center mx-auto">
+          <button class="w-[100%] h-10 bg-green bg-opacity-20 rounded-md text-green font-bold text-wide">Ticket in active</button>
+          <button class="w-[100%] h-10 bg-red bg-opacity-20 rounded-md text-red font-bold text-wide">Not Paid</button>
+          <div class="show-details relative flex items-center justify-between w-[144px] h-14 text-lg text-darker-grey text-wide">Show details<img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
+
+            <!-- Ticket Information Mobile -->
+            <div class="ticket-information hidden absolute top-[70px] -left-[115px] w-[375px] h-[500px] -mt-[21px] rounded-b-3xl bg-white tracking-wide">
+              <div class="flex flex-col justify-between w-[327px] h-[470px] mx-auto py-5">
+                <div class="text-lg text-black tracking-wide font-semibold">Ticket Information</div>
+
+                <!-- No. Rekening Virtual -->
+                <div class="flex flex-col justify-between my-4">
+                  <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+                    <div>No. Rekening Virtual</div>
+                    <div>:</div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-lg font-bold mr-5 text-black">12321328913829724</div>
+                    <button class="border-1 border-blue rounded-md w-[72px] h-[48px] text-blue transform active:scale-90 active:opacity-75 transition-transform">Copy</button>
+                  </div>
+                </div>
+
+                <!-- Total Payment -->
+                <div class="flex flex-col justify-between">
+                  <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+                    <div>Total Payment</div>
+                    <div>:</div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="text-lg font-bold text-blue">$30</div>
+                  </div>
+                </div>
+
+                
+                <!-- Due Date -->
+                <div class="text-darkest-grey tracking-widest text-justify text-base">Pay this payment bill before it is due, on <span class="text-red">June 23, 2023</span>. If the bill has not been paid by the specified time, it will be forfeited</div>
+
+                <!-- Cek Pembayaran -->
+                <button class="w-[100%] h-[48px] text-white rounded-md bg-blue shadow-md transform active:scale-90 active:opacity-75 transition-transform">Cek Pembayaran</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second -->
+      <div class="mobile flex flex-col justify-center items-center w-[100%] h-[357px] rounded-[16px] bg-white mb-6">
+        <div class="w-[300px] h-[116px] flex flex-col justify-between mx-auto">
+          <div class="w-[130px] h-[52px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
+          <div class="flex flex-col justify-between">
+            <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
+            <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+          </div>
+        </div>
+        <div class="flex w-[100%] border-b my-6"></div>
+        <div class="w-[300px] h-[170px] flex flex-col justify-between items-center mx-auto">
+          <button class="w-[100%] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-boldtext-wide">Ticket used</button>
+          <button class="w-[100%] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+          <div class="show-details relative flex items-center justify-between w-[144px] h-14 text-lg text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
+            
+              <!-- Ticket Information -->
+              <div class="hidden ticket-information absolute top-[70px] -left-[115px] w-[375px] h-[500px] -mt-[21px] rounded-b-3xl bg-white tracking-wide text-black">
+                <div class="flex flex-col justify-between w-[300px] h-[205px] mx-auto py-5">
+                  <div class="text-lg font-semibold tracking-wide">Ticket Information</div>
+
+                  <div class="flex flex-col justify-between w-[100%] h-[367px]">
+                    <!-- QR Code -->
+                    <div class="flex justify-start">
+                      <img src="../assets/qr-code.svg" alt="QR code">
+                    </div>
+
+                    <!-- Detail Ticket -->
+                    <div class="flex flex-col justify-between w-[250px] h-[116px] text-sm my-6">
+                      <!-- Row 1 -->
+                      <div class="flex justify-between items-center">
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Category</div>
+                          <div class="text-black font-semibold">PG-13</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Time</div>
+                          <div class="text-black font-semibold">2:00pm</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Seats</div>
+                            <div class="text-black font-semibold">C4, C5, C6</div>
+                        </div>
+                      </div>
+
+                      <!-- Row 2 -->
+                      <div class="flex justify-between items-center mt-6">
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Movie</div>
+                          <div class="text-black font-semibold">Spider-Man: ...</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Date</div>
+                          <div class="text-black font-semibold">07 Jul</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Count</div>
+                          <div class="text-black font-semibold">3 pcs</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Total Harga -->
+                    <div class="flex flex-col justify-center font-semibold">
+                      <div >Total</div>
+                      <div class="text-2xl">$30.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+          </div>
+        </div>
+      </div>
+
+      <!-- Third -->
+      <div class="mobile flex flex-col justify-center items-center w-[100%] h-[357px] rounded-[16px] bg-white mb-6">
+        <div class="w-[300px] h-[116px] flex flex-col justify-between mx-auto">
+          <div class="w-[130px] h-[52px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
+          <div class="flex flex-col justify-between">
+            <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
+            <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+          </div>
+        </div>
+        <div class="flex w-[100%] border-b my-6"></div>
+        <div class="w-[300px] h-[170px] flex flex-col justify-between items-center mx-auto">
+          <button class="w-[100%] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-boldtext-wide">Ticket used</button>
+          <button class="w-[100%] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+          <div class="show-details relative flex items-center justify-between w-[144px] h-14 text-lg text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
+            
+              <!-- Ticket Information -->
+              <div class="hidden ticket-information absolute top-[70px] -left-[115px] w-[375px] h-[500px] -mt-[21px] rounded-b-3xl bg-white tracking-wide text-black">
+                <div class="flex flex-col justify-between w-[300px] h-[205px] mx-auto py-5">
+                  <div class="text-lg font-semibold tracking-wide">Ticket Information</div>
+
+                  <div class="flex flex-col justify-between w-[100%] h-[367px]">
+                    <!-- QR Code -->
+                    <div class="flex justify-start">
+                      <img src="../assets/qr-code.svg" alt="QR code">
+                    </div>
+
+                    <!-- Detail Ticket -->
+                    <div class="flex flex-col justify-between w-[250px] h-[116px] text-sm my-6">
+                      <!-- Row 1 -->
+                      <div class="flex justify-between items-center">
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Category</div>
+                          <div class="text-black font-semibold">PG-13</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Time</div>
+                          <div class="text-black font-semibold">2:00pm</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Seats</div>
+                            <div class="text-black font-semibold">C4, C5, C6</div>
+                        </div>
+                      </div>
+
+                      <!-- Row 2 -->
+                      <div class="flex justify-between items-center mt-6">
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Movie</div>
+                          <div class="text-black font-semibold">Spider-Man: ...</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Date</div>
+                          <div class="text-black font-semibold">07 Jul</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Count</div>
+                          <div class="text-black font-semibold">3 pcs</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Total Harga -->
+                    <div class="flex flex-col justify-center font-semibold">
+                      <div >Total</div>
+                      <div class="text-2xl">$30.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- User -->
     <div class="user w-[328px] h-[831px] md:h-[783px] flex md:flex flex-col justify-center items-center bg-white rounded-[24px]">
       <div class="w-[248px] h-[320px]">
@@ -132,13 +340,13 @@
       <!-- Header -->
       <div class="hidden md:flex justify-center-center w-[100%] h-16 text-lg rounded-[16px] bg-white mb-12">
         <div class="flex md:w-[50%] lg:w-[40%] justify-between ml-10">
-          <div class="account-settings border-b-2 border-blue py-[18px]">Account Settings</div>
-          <div class="order-history border-b-2 border-white text-darkest-grey py-[17px]">Order History</div>
+          <div class="account-settings-header border-b-2 border-blue py-[18px]">Account Settings</div>
+          <div class="order-history-header border-b-2 border-white text-darkest-grey py-[17px]">Order History</div>
         </div>
       </div>
       
       <!-- Details Information -->
-      <div class="hidden md:flex flex-col justify-center items-center w-[100%] h-[418px] rounded-[16px] bg-white mb-6">
+      <div class="details-information hidden md:flex flex-col justify-center items-center w-[100%] h-[418px] rounded-[16px] bg-white mb-6">
         <div class="md:w-[550px] lg:w-[802px] h-[315px] mx-auto">
           <div class="flex text-base tracking-wide border-b pb-4">Details Information</div>
           <div class="grid grid-cols-2 gap-5 w-[100%] mt-12">
@@ -170,7 +378,7 @@
       </div>
 
       <!-- Account & Privacy -->
-      <div class="hidden md:flex items-center w-[100%] h-[297px] rounded-[16px] bg-white mb-6">
+      <div class="account-privacy hidden md:flex items-center w-[100%] h-[297px] rounded-[16px] bg-white mb-6">
         <div class="md:w-[550px] lg:w-[802px] h-[193px] mx-auto">
           <div class="flex w-[100%] text-base tracking-wide border-b pb-4">Account and Privacy</div>
           <div class="grid grid-cols-2 gap-5 mt-12">
@@ -188,10 +396,10 @@
         </div>
         
       </div>
-      <button class="hidden md:flex justify-center items-center w-[360px] h-[56px] text-white font-bold rounded-[16px] bg-blue shadow-md mb-14 md:mb-0 transform active:scale-90 active:opacity-75 transition-transform">Update changes</button>
+      <button class="update-changes hidden md:flex justify-center items-center w-[360px] h-[56px] text-white font-bold rounded-[16px] bg-blue shadow-md mb-14 md:mb-0 transform active:scale-90 active:opacity-75 transition-transform">Update changes</button>
 
       <!-- Order History -->
-      <div class="hidden">
+      <div class="order-history hidden">
         <!-- First -->
         <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
           <div class="w-[730px] h-16 flex justify-between mx-auto">
@@ -430,30 +638,97 @@
       }
     })
 
-    const accountSettings = document.querySelector('.account-settings')
+    const accountSettingsHeader = document.querySelector('.account-settings-header')
+    const orderHistoryHeader = document.querySelector('.order-history-header')
     const orderHistory = document.querySelector('.order-history')
-    accountSettings.addEventListener('click', () => {
-      if (!accountSettings.classList.contains('border-blue')) {
-        orderHistory.classList.remove('border-blue')
-        orderHistory.classList.add('border-white')
-        orderHistory.classList.add('text-darkest-grey')
-        accountSettings.classList.remove('border-white')
-        accountSettings.classList.add('border-blue')
-        accountSettings.classList.remove('text-darkest-grey')
-      }
-    })
-    orderHistory.addEventListener('click', () => {
-      if (!orderHistory.classList.contains('border-blue')) {
-        accountSettings.classList.remove('border-blue')
-        accountSettings.classList.add('border-white')
-        accountSettings.classList.add('text-darkest-grey')
-        orderHistory.classList.remove('border-white')
-        orderHistory.classList.add('border-blue')
-        orderHistory.classList.remove('text-darkest-grey')
+    const accountSettings = document.querySelector('.account-setting')
+    const detailsInformation = document.querySelector('.details-information')
+    const accountPrivacy = document.querySelector('.account-privacy')
+    const updateChanges = document.querySelector('.update-changes')
+
+    orderHistoryHeader.addEventListener('click', () => {
+      if (!orderHistoryHeader.classList.contains('border-blue')) {
+        
+        accountSettingsHeader.classList.remove('border-blue')
+        accountSettingsHeader.classList.add('border-white')
+        accountSettingsHeader.classList.add('text-darkest-grey')
+        orderHistoryHeader.classList.remove('border-white')
+        orderHistoryHeader.classList.add('border-blue')
+        orderHistoryHeader.classList.remove('text-darkest-grey')
+
+        detailsInformation.classList.remove('md:flex')
+        accountPrivacy.classList.remove('md:flex')
+        updateChanges.classList.remove('md:flex')
+        detailsInformation.classList.add('md:hidden')
+        accountPrivacy.classList.add('md:hidden')
+        updateChanges.classList.add('md:hidden')
+
+        orderHistory.classList.add('md:flex', 'flex-col')
+        accountSettings.classList.add('md:hidden')
       }
     })
 
-    const tickets = document.querySelectorAll('.ticket')
+    accountSettingsHeader.addEventListener('click', () => {
+      if (!accountSettingsHeader.classList.contains('border-blue')) {
+
+        orderHistoryHeader.classList.remove('border-blue')
+        orderHistoryHeader.classList.add('border-white')
+        orderHistoryHeader.classList.add('text-darkest-grey')
+        accountSettingsHeader.classList.remove('border-white')
+        accountSettingsHeader.classList.add('border-blue')
+        accountSettingsHeader.classList.remove('text-darkest-grey')
+
+        detailsInformation.classList.remove('md:hidden')
+        accountPrivacy.classList.remove('md:hidden')
+        updateChanges.classList.remove('md:hidden')
+        detailsInformation.classList.add('md:flex')
+        accountPrivacy.classList.add('md:flex')
+        updateChanges.classList.add('md:flex')
+
+        orderHistory.classList.remove('md:flex')
+        accountSettings.classList.remove('md:hidden')
+      }
+    })
+
+    const detailsAccountHeaderMobile = document.querySelector('.details-account-header-mobile')
+    const orderHistoryHeaderMobile = document.querySelector('.order-history-header-mobile')
+    const orderHistoryMobile = document.querySelector('.order-history-mobile')
+    const accountSettingsMobile = document.querySelector('.account-setting-mobile')
+
+    orderHistoryHeaderMobile.addEventListener('click', () => {
+      if (!orderHistoryHeaderMobile.classList.contains('border-blue')) {
+        
+        detailsAccountHeaderMobile.classList.remove('border-blue')
+        detailsAccountHeaderMobile.classList.add('border-white')
+        detailsAccountHeaderMobile.classList.add('text-darkest-grey')
+        orderHistoryHeaderMobile.classList.remove('border-white')
+        orderHistoryHeaderMobile.classList.add('border-blue')
+        orderHistoryHeaderMobile.classList.remove('text-darkest-grey')
+        
+        orderHistoryMobile.classList.remove('hidden')
+        orderHistoryMobile.classList.add('flex', 'flex-col')
+        user.classList.add('hidden')
+      }
+    })
+
+    detailsAccountHeaderMobile.addEventListener('click', () => {
+      if (!detailsAccountHeaderMobile.classList.contains('border-blue')) {
+
+        orderHistoryHeaderMobile.classList.remove('border-blue')
+        orderHistoryHeaderMobile.classList.add('border-white')
+        orderHistoryHeaderMobile.classList.add('text-darkest-grey')
+        detailsAccountHeaderMobile.classList.remove('border-white')
+        detailsAccountHeaderMobile.classList.add('border-blue')
+        detailsAccountHeaderMobile.classList.remove('text-darkest-grey')
+
+        orderHistoryMobile.classList.add('hidden')
+        orderHistoryMobile.classList.remove('flex', 'flex-col')
+        user.classList.remove('hidden')
+      }
+    })
+
+
+
     const showDetails = document.querySelectorAll('.show-details');
     showDetails.forEach(detail => {
       detail.addEventListener('click', () => {
@@ -466,10 +741,18 @@
 
         if (dropdownGrey.classList.contains('rotate-180')) {
           ticketInformation.classList.remove('hidden')
-          parentOne.parentNode.classList.add('mb-[370px]')
+          if (parentOne.parentNode.classList.contains('mobile')) {
+            parentOne.parentNode.classList.add('mb-[500px]')
+          } else {
+            parentOne.parentNode.classList.add('mb-[370px]')
+          }
         } else {
           ticketInformation.classList.add('hidden')
-          parentOne.parentNode.classList.remove('mb-[370px]')
+          if (parentOne.parentNode.classList.contains('mobile')) {
+            parentOne.parentNode.classList.remove('mb-[500px]')
+          } else {
+            parentOne.parentNode.classList.remove('mb-[370px]')
+          }
         }
 
       });
