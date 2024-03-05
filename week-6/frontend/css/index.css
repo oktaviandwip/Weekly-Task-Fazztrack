@@ -26,7 +26,7 @@ header {
 .header .icon {
   width: 130px;
   height: 51px;
-  background-image: url('../assets/tickitz-icon.png');
+  background-image: url('../assets/tickitz-icon.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
