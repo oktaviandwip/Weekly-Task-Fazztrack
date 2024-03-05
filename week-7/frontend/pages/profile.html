@@ -37,7 +37,7 @@
 
   <main class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch md:w-[950px] lg:w-[1226px] mx-auto md:mt-14">
     <!-- Header Mobile -->
-    <div class="flex fixed top-[104px] md:hidden items-center w-[100%] h-16 text-base bg-white mb-14 md:mb-0">
+    <div class="flex fixed top-[104px] md:hidden items-center w-[100%] h-16 text-base bg-white mb-14 md:mb-0 z-50">
       <div class="flex w-[80%] md:w-[50%] lg:w-[40%] justify-between ml-10">
         <div class="border-b-2 border-blue py-5">Details Account</div>
         <div class="text-darkest-grey py-5">Order History</div>
@@ -127,18 +127,18 @@
     </div>
 
     <!-- Account Settings -->
-    <form class="md:w-[600px] lg:w-[866px] h-[1000px] overflow-y-hidden">
+    <form class="md:w-[600px] lg:w-[866px] h-[1020px] overflow-y-hidden">
       
       <!-- Header -->
-      <div class="flehiddenems-center w-[100%] h-16 text-lg rounded-[16px] bg-white mb-12">
+      <div class="hidden md:flex justify-center-center w-[100%] h-16 text-lg rounded-[16px] bg-white mb-12">
         <div class="flex md:w-[50%] lg:w-[40%] justify-between ml-10">
-          <div class="account-settings border-b-2 border-blue py-[17px]">Account Settings</div>
+          <div class="account-settings border-b-2 border-blue py-[18px]">Account Settings</div>
           <div class="order-history border-b-2 border-white text-darkest-grey py-[17px]">Order History</div>
         </div>
       </div>
       
       <!-- Details Information -->
-      <div class="md:hidden flex-col justify-center items-center w-[100%] h-[418px] rounded-[16px] bg-white">
+      <div class="hidden md:flex flex-col justify-center items-center w-[100%] h-[418px] rounded-[16px] bg-white mb-6">
         <div class="md:w-[550px] lg:w-[802px] h-[315px] mx-auto">
           <div class="flex text-base tracking-wide border-b pb-4">Details Information</div>
           <div class="grid grid-cols-2 gap-5 w-[100%] mt-12">
@@ -170,7 +170,7 @@
       </div>
 
       <!-- Account & Privacy -->
-      <div class="md:hidden items-center w-[100%] h-[297px] rounded-[16px] bg-white">
+      <div class="hidden md:flex items-center w-[100%] h-[297px] rounded-[16px] bg-white mb-6">
         <div class="md:w-[550px] lg:w-[802px] h-[193px] mx-auto">
           <div class="flex w-[100%] text-base tracking-wide border-b pb-4">Account and Privacy</div>
           <div class="grid grid-cols-2 gap-5 mt-12">
@@ -188,103 +188,220 @@
         </div>
         
       </div>
-      <button class="hidden justify-center items-center w-[360px] h-[56px] text-white font-bold rounded-[16px] bg-blue shadow-md mb-14 md:mb-0 transform active:scale-90 active:opacity-75 transition-transform">Update changes</button>
+      <button class="hidden md:flex justify-center items-center w-[360px] h-[56px] text-white font-bold rounded-[16px] bg-blue shadow-md mb-14 md:mb-0 transform active:scale-90 active:opacity-75 transition-transform">Update changes</button>
 
       <!-- Order History -->
-      <!-- First -->
-      <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
-        <div class="w-[730px] h-16 flex justify-between mx-auto">
-          <div class="flex flex-col justify-between">
-            <div class="text-darker-grey text-sm text-wide">Tuesday, 07 July 2020 - 04:30pm</div>
-            <div class="text-2xl font-semibold text-wide">Spider-Man: Homecoming</div>
+      <div class="hidden">
+        <!-- First -->
+        <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
+          <div class="w-[730px] h-16 flex justify-between mx-auto">
+            <div class="flex flex-col justify-between">
+              <div class="text-darker-grey text-sm text-wide">Tuesday, 07 July 2020 - 04:30pm</div>
+              <div class="text-2xl font-semibold text-wide">Spider-Man: Homecoming</div>
+            </div>
+            <div class="w-[160px] h-[64px] bg-[url('../assets/CineOne21.svg')] bg-contain bg-no-repeat bg-center"></div>
           </div>
-          <div class="w-[160px] h-[64px] bg-[url('../assets/CineOne21.svg')] bg-contain bg-no-repeat bg-center"></div>
-        </div>
-        <div class="flex w-[100%] border-b mt-10 mb-8"></div>
-        <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
-          <div>
-            <button class="w-[196px] h-10 bg-green bg-opacity-20 rounded-md text-green font-bold mr-4 text-wide">Ticket in active</button>
-            <button class="w-[171px] h-10 bg-red bg-opacity-20 rounded-md text-red font-bold text-wide">Not Paid</button>
-          </div>
-          <div class="show-details relative flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details<img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
+          <div class="flex w-[100%] border-b mt-10 mb-8"></div>
+          <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
+            <div>
+              <button class="w-[196px] h-10 bg-green bg-opacity-20 rounded-md text-green font-bold mr-4 text-wide">Ticket in active</button>
+              <button class="w-[171px] h-10 bg-red bg-opacity-20 rounded-md text-red font-bold text-wide">Not Paid</button>
+            </div>
+            <div class="show-details relative flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details<img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
 
-            <!-- Ticket Information -->
-            <div class="hidden ticket-information absolute top-[96px] -left-[675px] w-[872px] h-[361px] -mt-[21px] rounded-b-3xl bg-white tracking-wide">
-              <div class="flex flex-col justify-between w-[730px] h-[324px] mx-auto py-5">
-                <div class="text-lg text-black tracking-wide">Ticket Information</div>
+              <!-- Ticket Information -->
+              <div class="hidden ticket-information absolute top-[96px] -left-[675px] w-[872px] h-[361px] -mt-[21px] rounded-b-3xl bg-white tracking-wide">
+                <div class="flex flex-col justify-between w-[730px] h-[324px] mx-auto py-5">
+                  <div class="text-lg text-black tracking-wide">Ticket Information</div>
 
-                <!-- No. Rekening Virtual -->
-                <div class="flex justify-between items-center ">
-                  <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
-                    <div>No. Rekening Virtual</div>
-                    <div>:</div>
+                  <!-- No. Rekening Virtual -->
+                  <div class="flex justify-between items-center ">
+                    <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+                      <div>No. Rekening Virtual</div>
+                      <div>:</div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="text-lg font-bold mr-5 text-black">12321328913829724</div>
+                      <button class="border-1 border-blue rounded-md w-[72px] h-[48px] text-blue transform active:scale-90 active:opacity-75 transition-transform">Copy</button>
+                    </div>
                   </div>
-                  <div class="flex items-center">
-                    <div class="text-lg font-bold mr-5 text-black">12321328913829724</div>
-                    <button class="border-1 border-blue rounded-md w-[72px] h-[48px] text-blue transform active:scale-90 active:opacity-75 transition-transform">Copy</button>
+
+                  <!-- Total Payment -->
+                  <div class="flex justify-between items-center">
+                    <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+                      <div>Total Payment</div>
+                      <div>:</div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="text-lg font-bold text-blue">$30</div>
+                    </div>
                   </div>
+
+                  
+                  <!-- Due Date -->
+                  <div class="text-darkest-grey tracking-widest text-justify">Pay this payment bill before it is due, on <span class="text-red">June 23, 2023</span>. If the bill has not been paid by the specified time, it will be forfeited</div>
+
+                  <!-- Cek Pembayaran -->
+                  <button class="w-[191px] h-[48px] text-white rounded-md bg-blue shadow-md transform active:scale-90 active:opacity-75 transition-transform">Cek Pembayaran</button>
                 </div>
-
-                <!-- Total Payment -->
-                <div class="flex justify-between items-center">
-                  <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
-                    <div>Total Payment</div>
-                    <div>:</div>
-                  </div>
-                  <div class="flex items-center">
-                    <div class="text-lg font-bold text-blue">$30</div>
-                  </div>
-                </div>
-
-                
-                <!-- Due Date -->
-                <div class="text-darkest-grey tracking-widest text-justify">Pay this payment bill before it is due, on <span class="text-red">June 23, 2023</span>. If the bill has not been paid by the specified time, it will be forfeited</div>
-
-                <!-- Cek Pembayaran -->
-                <button class="w-[191px] h-[48px] text-white rounded-md bg-blue shadow-md transform active:scale-90 active:opacity-75 transition-transform">Cek Pembayaran</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Second -->
-      <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
-        <div class="w-[730px] h-16 flex justify-between mx-auto">
-          <div class="flex flex-col justify-between">
-            <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
-            <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+        <!-- Second -->
+        <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
+          <div class="w-[730px] h-16 flex justify-between mx-auto">
+            <div class="flex flex-col justify-between">
+              <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
+              <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+            </div>
+            <div class="w-[160px] h-[64px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
           </div>
-          <div class="w-[160px] h-[64px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
-        </div>
-        <div class="flex w-[100%] border-b mt-10 mb-8"></div>
-        <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
-          <div>
-            <button class="w-[196px] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-bold mr-4 text-wide">Ticket used</button>
-            <button class="w-[171px] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
-          </div>
-          <div class="show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey  text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey"></div>
-        </div>
-      </div>
+          <div class="flex w-[100%] border-b mt-10 mb-8"></div>
+          <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
+            <div>
+              <button class="w-[196px] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-bold mr-4 text-wide">Ticket used</button>
+              <button class="w-[171px] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+            </div>
+            <div class="show-details relative flex items-center justify-between w-[128px] h-[64px] text-darker-grey  text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
+              
+                <!-- Ticket Information -->
+                <div class="hidden ticket-information absolute top-[96px] -left-[675px] w-[872px] h-[256px] -mt-[21px] rounded-b-3xl bg-white tracking-wide text-black">
+                  <div class="flex flex-col justify-between w-[730px] h-[205px] mx-auto py-5">
+                    <div class="text-lg  tracking-wide">Ticket Information</div>
 
-      <!-- Third -->
-      <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
-        <div class="w-[730px] h-16 flex justify-between mx-auto">
-          <div class="flex flex-col justify-between">
-            <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
-            <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+                    <div class="flex justify-between items-center w-[584px]">
+                      <!-- QR Code -->
+                      <div class="flex justify-between items-center ">
+                        <img src="../assets/qr-code.svg" alt="QR code">
+                      </div>
+
+                      <!-- Detail Ticket -->
+                      <div class="flex flex-col justify-between w-[235px] h-[116px]">
+                        <!-- Row 1 -->
+                        <div class="flex justify-between items-center">
+                          <div>
+                            <div class="text-xs text-darker-grey font-semibold">Category</div>
+                            <div class="text-black font-semibold">PG-13</div>
+                          </div>
+                          <div>
+                            <div class="text-xs text-darker-grey font-semibold">Time</div>
+                            <div class="text-black font-semibold">2:00pm</div>
+                          </div>
+                          <div>
+                            <div class="text-xs text-darker-grey font-semibold">Seats</div>
+                              <div class="text-black font-semibold">C4, C5, C6</div>
+                          </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="flex justify-between items-center">
+                          <div>
+                            <div class="text-xs text-darker-grey font-semibold">Movie</div>
+                            <div class="text-black font-semibold">Spider-Man: ...</div>
+                          </div>
+                          <div>
+                            <div class="text-xs text-darker-grey font-semibold">Date</div>
+                            <div class="text-black font-semibold">07 Jul</div>
+                          </div>
+                          <div>
+                            <div class="text-xs text-darker-grey font-semibold">Count</div>
+                            <div class="text-black font-semibold">3 pcs</div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Total Harga -->
+                      <div class="flex flex-col justify-center">
+                        <div >Total</div>
+                        <div class="text-2xl">$30.00</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+            </div>
           </div>
-          <div class="w-[160px] h-[64px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
         </div>
-        <div class="flex w-[100%] border-b mt-10 mb-8"></div>
-        <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
-          <div>
-            <button class="w-[196px] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-bold mr-4 text-wide">Ticket used</button>
-            <button class="w-[171px] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+
+        <!-- Third -->
+        <div class="ticket flex flex-col justify-center items-center w-[100%] h-[250px] rounded-[16px] bg-white mb-6">
+          <div class="w-[730px] h-16 flex justify-between mx-auto">
+            <div class="flex flex-col justify-between">
+              <div class="text-darker-grey text-sm text-wide">Monday, 14 June 2020 - 02:00pm</div>
+              <div class="text-2xl font-semibold text-wide">Avengers: End Game</div>
+            </div>
+            <div class="w-[160px] h-[64px] bg-[url('../assets/ebv-id.svg')] bg-contain bg-no-repeat bg-center"></div>
           </div>
-          <div class="show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey"></div>
+          <div class="flex w-[100%] border-b mt-10 mb-8"></div>
+          <div class="w-[730px] h-10 flex justify-between items-center mx-auto">
+            <div>
+              <button class="w-[196px] h-10 bg-darkest-grey bg-opacity-20 rounded-md text-darkest-grey font-bold mr-4 text-wide">Ticket used</button>
+              <button class="w-[171px] h-10 bg-blue bg-opacity-20 rounded-md text-blue font-bold text-wide">Paid</button>
+            </div>
+            <div class="relative show-details flex items-center justify-between w-[128px] h-[64px] text-darker-grey text-wide">Show details <img class="dropdown-grey transform" src="../assets/dropdown-grey.svg" alt="dropdown grey">
+
+              <!-- Ticket Information -->
+              <div class="hidden ticket-information absolute top-[96px] -left-[675px] w-[872px] h-[256px] -mt-[21px] rounded-b-3xl bg-white tracking-wide text-black">
+                <div class="flex flex-col justify-between w-[730px] h-[205px] mx-auto py-5">
+                  <div class="text-lg  tracking-wide">Ticket Information</div>
+
+                  <div class="flex justify-between items-center w-[584px]">
+                    <!-- QR Code -->
+                    <div class="flex justify-between items-center ">
+                      <img src="../assets/qr-code.svg" alt="QR code">
+                    </div>
+
+                    <!-- Detail Ticket -->
+                    <div class="flex flex-col justify-between w-[235px] h-[116px]">
+                      <!-- Row 1 -->
+                      <div class="flex justify-between items-center">
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Category</div>
+                          <div class="text-black font-semibold">PG-13</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Time</div>
+                          <div class="text-black font-semibold">2:00pm</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Seats</div>
+                            <div class="text-black font-semibold">C4, C5, C6</div>
+                        </div>
+                      </div>
+
+                      <!-- Row 2 -->
+                      <div class="flex justify-between items-center">
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Movie</div>
+                          <div class="text-black font-semibold">Spider-Man: ...</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Date</div>
+                          <div class="text-black font-semibold">07 Jul</div>
+                        </div>
+                        <div>
+                          <div class="text-xs text-darker-grey font-semibold">Count</div>
+                          <div class="text-black font-semibold">3 pcs</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Total Harga -->
+                    <div class="flex flex-col justify-center">
+                      <div >Total</div>
+                      <div class="text-2xl">$30.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
         </div>
       </div>
+      
     </form>
   </main>
 
@@ -340,22 +457,19 @@
     const showDetails = document.querySelectorAll('.show-details');
     showDetails.forEach(detail => {
       detail.addEventListener('click', () => {
+        const parentOne = detail.parentNode
         const dropdownGrey = detail.querySelector('.dropdown-grey');
         const ticketInformation = detail.querySelector('.ticket-information')
 
-        ticketInformation.classList.toggle('mb-[280px]')
+        ticketInformation.classList.toggle('mb-[380px]')
         dropdownGrey.classList.toggle('rotate-180');
 
         if (dropdownGrey.classList.contains('rotate-180')) {
           ticketInformation.classList.remove('hidden')
-          tickets.forEach(ticket => {
-            ticket.classList.add('mb-[370px]')
-          })
+          parentOne.parentNode.classList.add('mb-[370px]')
         } else {
           ticketInformation.classList.add('hidden')
-          tickets.forEach(ticket => {
-            ticket.classList.remove('mb-[370px]')
-          })
+          parentOne.parentNode.classList.remove('mb-[370px]')
         }
 
       });
