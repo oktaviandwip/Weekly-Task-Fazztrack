@@ -10,7 +10,7 @@
   <!-- Navbar -->
   <header class="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex items-center z-50">
     <div class="flex w-[1106px] justify-between items-center mx-6 xl:mx-auto">
-      <img src="../assets/tickitz-icon.svg" alt="tickitz icon">
+      <a href="./index.html"><img src="../assets/tickitz-icon.svg" alt="tickitz icon"></a>
       <nav class="w-[265px] hidden md:flex justify-between">
         <a href="./index.html">Home</a>
         <a href="./movie-list.html">Movie</a>
@@ -34,7 +34,46 @@
     </div>
   </header>
 
-  <main class="flex flex-col items-center mx-auto">
+  <main class="relative flex flex-col items-center mx-auto">
+
+    <!-- Pop Up Payment Info -->
+    <div class="pop-up-payment-info hidden form-mobile w-[573px] h-[506px] flex-col justify-center items-center bg-white rounded-[24px] shadow-outset z-50">
+      <div class="w-[545px] h-[369px] flex flex-col justify-between mx-auto">
+          <div class="font-bold text-2xl tracking-wide text-center">Payment Info</div>
+
+          <!-- No. Rekening Virtual -->
+          <div class="flex justify-between items-center my-4">
+            <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+              <div>No. Rekening Virtual</div>
+              <div>:</div>
+            </div>
+            <div class="flex items-center">
+              <div class="text-lg font-bold mr-5 text-black">12321328913829724</div>
+              <button class="border-1 border-blue rounded-md w-[72px] h-[48px] text-blue transform active:scale-90 active:opacity-75 transition-transform">Copy</button>
+            </div>
+          </div>
+
+          <!-- Total Payment -->
+          <div class="flex justify-between items-center">
+            <div class="flex justify-between text-sm text-darkest-grey w-[170px]">
+              <div>Total Payment</div>
+              <div>:</div>
+            </div>
+            <div class="flex items-center">
+              <div class="text-lg font-bold text-blue">$30</div>
+            </div>
+          </div>
+
+          
+          <!-- Due Date -->
+          <div class="text-darkest-grey tracking-wide text-justify text-base">Pay this payment bill before it is due, on <span class="text-red">June 23, 2023</span>. If the bill has not been paid by the specified time, it will be forfeited</div>
+
+          <!-- Cek Pembayaran -->
+          <a href="./ticket-result.html"><button class="font-bold w-[100%] h-[48px] text-white tracking-wide rounded-md bg-blue shadow-md transform active:scale-90 active:opacity-75 transition-transform">Check Payment</button></a>
+          <div href="./payment.html" class="text-blue font-bold w-[100%] text-center text-shadow-md transform active:scale-90 active:opacity-75 transition-transform">Pay Later</div>
+        </div>
+      </div>
+    </div>
 
     <!-- Step by step -->
     <div class="hidden md:flex w-[450px] justify-between py-8">
@@ -129,7 +168,7 @@
         </div>
 
         <!-- Pay Button -->
-        <button class="w-[100%] h-14 text-base text-white font-bold rounded-md bg-blue shadow-xl transform active:scale-90 active:opacity-75 transition-transform">Pay your order</button>
+        <button onclick="showPaymentInfo(this)" class="w-[100%] h-14 text-base text-white font-bold rounded-md bg-blue shadow-xl transform active:scale-90 active:opacity-75 transition-transform">Pay your order</button>
       </div>
     </div>
   </main>
@@ -196,6 +235,15 @@
       sidebar.classList.remove('translate-x-0')
       sidebar.classList.add('translate-x-64')
     })
+
+    const showPaymentInfo = () => {
+      const popUp = document.querySelector('.pop-up-payment-info');
+      if (popUp.classList.contains('hidden')) {
+        popUp.classList.remove('hidden');
+        popUp.classList.add('flex');
+      }
+    };
+
   </script>
 </body>
 </html>
