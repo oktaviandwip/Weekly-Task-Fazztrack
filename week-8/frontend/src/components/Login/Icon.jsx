@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import tickitzIcon from "../../assets/tickitz-icon-white.svg";
+import tickitzIcon from "/tickitz-icon-white.svg";
 
 const Icon = () => {
   return (

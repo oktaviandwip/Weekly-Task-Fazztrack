@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import tickitzIcon from "../assets/tickitz-icon.svg";
+import tickitzIcon from "/tickitz-icon.svg";
 import hamburgerMenu from "../assets/hamburger-menu.svg";
 import closeMenu from "../assets/close-menu.svg";
 
@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex items-center z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex z-50">
       <div className="flex w-[1106px] justify-between items-center mx-6 xl:mx-auto">
         <Link to="/">
           <img src={tickitzIcon} alt="tickitz icon" />
@@ -26,7 +26,7 @@ const Header = () => {
             Home
             <div className="absolute top-[110%] w-full h-[3px] bg-blue rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
           </Link>
-          <Link to="./movie-list.html" className="relative group">
+          <Link to="./movies.html" className="relative group">
             Movie
             <div className="absolute top-[110%] w-full h-[3px] bg-blue rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
           </Link>

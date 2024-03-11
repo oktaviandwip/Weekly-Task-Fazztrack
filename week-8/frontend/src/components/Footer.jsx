@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import tickitzIcon2 from "../assets/tickitz-icon-2.svg";
+import tickitzIcon2 from "/tickitz-icon-2.svg";
 import ebvId from "../assets/ebv-id.svg";
 import cineOne21 from "../assets/CineOne21.svg";
 import hiflix from "../assets/hiflix.svg";

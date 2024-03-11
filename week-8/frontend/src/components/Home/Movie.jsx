@@ -34,7 +34,7 @@ const Movie = ({
           </div>
         </div>
       </div>
-      <div className="text-lg md:text-2xl font-bold leading-[34px] tracking-[1px] my-[11px] md:my-[19px]">
+      <div className="w-[90%] text-lg md:text-2xl font-bold leading-[34px] tracking-[1px] my-[11px] md:my-[19px] truncate">
         {name}
       </div>
       <div

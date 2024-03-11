@@ -4,3 +4,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Mulish", sans-serif;
+  padding-top: 104px;
+}

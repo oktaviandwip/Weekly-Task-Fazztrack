@@ -69,7 +69,7 @@ const home = () => {
   return (
     <>
       <Header />
-      <main className="pt-[155px] w-[375px] md:w-[880px] lg:w-[1106px] mx-auto font-mulish">
+      <main className="pt-[51px] w-[375px] md:w-[880px] lg:w-[1106px] mx-auto">
         <div className="mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="text-center md:text-left w-[320px] md:w-[450px] lg:w-[638px] mb-[19px] md:mb-0">
             <div className="text-lg leading-[34px] tracking-[0.75px] uppercase font-semibold text-blue">
@@ -110,7 +110,6 @@ const home = () => {
           <Title
             title={"WHY CHOOSE US"}
             subTitle={"Unleashing the Ultimate Movie Experience"}
-            position={null}
           />
 
           <div className="flex flex-col md:flex-row justify-between w-full">
@@ -146,9 +145,9 @@ const home = () => {
         />
 
         <div className="whitespace-nowrap overflow-x-auto">
-          <div className="grid grid-cols-4 w-[1000px] md:w-[1106px]">
+          <div className="grid grid-cols-4 grid-flow-col w-[1000px] md:w-[1106px]">
             {recommended &&
-              recommended.map((e, index) => {
+              recommended.slice(0, 4).map((e, index) => {
                 return (
                   <Movie
                     key={index}
@@ -186,9 +185,9 @@ const home = () => {
         </div>
 
         <div className="whitespace-nowrap overflow-x-auto">
-          <div className="grid grid-cols-4 w-[1000px] md:w-[1106px]">
+          <div className="grid grid-cols-4 grid-rows-1 w-[1000px] md:w-[1106px]">
             {recommended &&
-              recommended.map((e, index) => {
+              recommended.slice(0, 4).map((e, index) => {
                 return (
                   <Movie
                     key={index}
