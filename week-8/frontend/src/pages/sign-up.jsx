@@ -6,7 +6,7 @@ import numberTwo from "../assets/number-2.svg";
 import numberThree from "../assets/number-3.svg";
 import stripe from "../assets/stripe.svg";
 import EmailPassword from "../components/Login/EmailPassword.jsx";
-import Button from "../components/Login/Button.jsx";
+import Button from "../components/Movies/Button.jsx";
 import GoogleFb from "../components/Login/GoogleFb.jsx";
 
 const signIn = () => {
@@ -51,12 +51,16 @@ const signIn = () => {
                 </label>
               </div>
 
-              <Button text="Join For Free Now" />
+              <Button
+                text={"Join For Free Now"}
+                width={"full"}
+                height={"[56px]"}
+              />
             </form>
 
             <p className="text-darkest-grey text-center tracking-[0.5px] font-inter md:font-semibold mt-6">
               Already have an account?{" "}
-              <Link to="./sign-in.html" className="text-blue underline">
+              <Link to="/sign-in.html" className="text-blue underline">
                 Log in
               </Link>
             </p>

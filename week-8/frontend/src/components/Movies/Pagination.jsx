@@ -1,7 +1,7 @@
 import { useState } from "react";
-import nextPage from "../../assets/next-page.svg"
+import nextPage from "../../assets/next-page.svg";
 
-const Pagination = () => {
+const Pagination = ({ radius }) => {
   const [activePage, setActivePage] = useState(1);
 
   const handlePageClick = (pageNumber) => {
@@ -9,21 +9,21 @@ const Pagination = () => {
   };
 
   return (
-    <nav className="w-full mt-6">
+    <nav className="w-[327px] md:w-full md:mt-6">
       <ul className=" flex justify-center">
         {[1, 2, 3, 4].map((pageNumber) => (
-          <button
+          <div
             key={pageNumber}
             type="button"
-            className={`rounded-full px-[16px] py-[10px] me-5 ${
+            className={`rounded-${radius} px-[15px] py-[8px] me-5 ${
               pageNumber === activePage
-                ? "bg-blue text-white"
+                ? "bg-blue text-white shadow-xl"
                 : "bg-light-grey text-dark-grey"
             }`}
             onClick={() => handlePageClick(pageNumber)}
           >
             {pageNumber}
-          </button>
+          </div>
         ))}
         <img
           src={nextPage}

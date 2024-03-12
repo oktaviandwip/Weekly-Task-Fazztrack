@@ -7,7 +7,7 @@ import spiderman from "../assets/spiderman-homecoming.png";
 import Carousel from "../components/Movies/Carousel";
 import Filter from "../components/Movies/Filter";
 import Movie from "../components/Home/Movie";
-import Pagination from "../components/Movies/Pagination"
+import Pagination from "../components/Movies/Pagination";
 import Newsletter from "../components/Home/Newsletter";
 import Footer from "../components/Footer";
 
@@ -19,7 +19,8 @@ const MovieList = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/movies/?page=1")
+    axios
+      .get("http://localhost:8000/movies/?page=1")
       .then((res) => {
         setData(res.data.rows);
       })
@@ -51,10 +52,10 @@ const MovieList = () => {
               })}
           </div>
         </div>
-        <Pagination/>
-        <Newsletter/>
+        <Pagination radius={"full"} />
+        <Newsletter />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };

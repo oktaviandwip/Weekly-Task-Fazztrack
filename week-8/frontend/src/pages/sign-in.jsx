@@ -1,7 +1,7 @@
 import Icon from "../components/Login/Icon.jsx";
 import Background from "../components/Login/Background.jsx";
 import EmailPassword from "../components/Login/EmailPassword.jsx";
-import Button from "../components/Login/Button.jsx";
+import Button from "../components/Movies/Button.jsx";
 import GoogleFb from "../components/Login/GoogleFb.jsx";
 
 const signIn = () => {
@@ -27,7 +27,7 @@ const signIn = () => {
                 Forgot your password?
               </p>
 
-              <Button text="Login" />
+              <Button text={"Login"} width={"full"} height={"[56px]"} />
             </form>
 
             <GoogleFb />
