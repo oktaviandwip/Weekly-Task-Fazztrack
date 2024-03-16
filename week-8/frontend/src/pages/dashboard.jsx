@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   return (
     <div className="w-full min-h-screen bg-dark-grey bg-opacity-[0.2] py-11">
-      <Header role={"admin"} />
+      <Header userRole={"admin"} />
       <main className="w-[327px] md:w-[768px] lg:w-[1000px] xl:w-[1106px] mx-auto">
         <Chart title={"Sales Chart"} data1={data1} data2={data2} />
         <Chart title={"Ticket Sales"} data1={data3} data2={data4} />

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Header from "../components/Header";
 import avenger from "../assets/background-login.svg";
 import jhonWick3 from "../assets/jhon-wick-3.png";
@@ -10,17 +9,22 @@ import Movie from "../components/Home/Movie";
 import Pagination from "../components/Movies/Pagination";
 import Newsletter from "../components/Home/Newsletter";
 import Footer from "../components/Footer";
+import useApi from "../../utils/useApi";
 
 const MovieList = () => {
+  const api = useApi();
   const bgImages = [avenger, jhonWick3, spiderman];
   const title = "LIST MOVIE OF THE WEEK";
   const subtitle = "Experience the Magic of Cinema: Book Your Tickets Today";
 
   const [data, setData] = useState(null);
+  const [searchFilm, setSearchFilm] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/movies/?page=1")
+    api({
+      method: "GET",
+      url: "/movies?page=1",
+    })
       .then((res) => {
         setData(res.data.rows);
       })

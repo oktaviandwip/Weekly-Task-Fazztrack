@@ -54,7 +54,7 @@ const ListMovie = ({
           {duration_hour} hours {duration_minute} minutes
         </div>
         <div className="w-[119px] h-[57px] flex justify-between items-center">
-          {actions.map(({ icon, alt, bgColor, onClick }, index) => (
+          {actions.map(({ icon, alt, bgColor }, index) => (
             <div
               key={index}
               className={`flex justify-center items-center size-[31px] rounded-md ${bgColor} transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300 cursor-pointer`}

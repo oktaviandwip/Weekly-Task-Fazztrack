@@ -1,14 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import tickitzIcon from "/tickitz-icon.svg";
 import hamburgerMenu from "../assets/hamburger-menu.svg";
 import closeMenu from "../assets/close-menu.svg";
 import dropdownProfile from "../assets/dropdown-profile.svg";
 import searchIconProfile from "../assets/search-icon-profile.svg";
 import photoProfile from "../assets/photo-profile.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../store/reducer/user";
 
-const Header = ({ role }) => {
+const Header = ({ userRole }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { isAuth } = useSelector((s) => s.users);
+  const { role } = useSelector((s) => s.users);
+
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [profileClicked, setProfileClicked] = useState(false);
 
   const handleMenuClick = () => {
     setSidebarOpen(true);
@@ -26,7 +34,7 @@ const Header = ({ role }) => {
 
     {
       nav: "Movie",
-      link: "/movies.html",
+      link: "/movies",
     },
 
     {
@@ -38,16 +46,16 @@ const Header = ({ role }) => {
   const admin = [
     {
       nav: "Dashboard",
-      link: "/admin/dashboard.html",
+      link: "/admin/dashboard",
     },
 
     {
       nav: "Movie",
-      link: "/admin/movies.html",
+      link: "/admin/movies",
     },
   ];
 
-  const userProfile = [
+  const guestSidebar = [
     {
       nav: "Home",
       link: "/",
@@ -55,7 +63,7 @@ const Header = ({ role }) => {
 
     {
       nav: "Movie",
-      link: "/movies.html",
+      link: "/movies",
     },
 
     {
@@ -65,16 +73,21 @@ const Header = ({ role }) => {
 
     {
       nav: "Sign In",
-      link: "/sign-in.html",
+      link: "/sign-in",
     },
 
     {
-      nav: "Sign up",
-      link: "/sign-up.html",
+      nav: "Sign Up",
+      link: "/sign-up",
     },
   ];
 
-  const adminProfile = [
+  const userSidebar = [
+    {
+      nav: <img src={photoProfile} alt="photo profile"></img>,
+      link: "#",
+    },
+
     {
       nav: "Home",
       link: "/",
@@ -82,7 +95,7 @@ const Header = ({ role }) => {
 
     {
       nav: "Movie",
-      link: "/movies.html",
+      link: "/movies",
     },
 
     {
@@ -91,47 +104,169 @@ const Header = ({ role }) => {
     },
 
     {
+      nav: "Profile",
+      link: "#",
+    },
+
+    {
+      nav: "Sign Out",
+      link: "#",
+    },
+  ];
+
+  const adminSidebar = [
+    {
       nav: <img src={photoProfile} alt="photo profile"></img>,
+      link: "#",
+    },
+    {
+      nav: "Home",
+      link: "/",
+    },
+
+    {
+      nav: "Movie",
+      link: "/movies",
+    },
+
+    {
+      nav: "Buy Ticket",
+      link: "#",
+    },
+
+    {
+      nav: "Dashboard",
+      link: "/admin/dashboard",
+    },
+
+    {
+      nav: "Add Movie",
+      link: "/admin/movies",
+    },
+
+    {
+      nav: "Sign Out",
       link: "#",
     },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white h-[104px] border-b-1 border-grey flex z-[60]">
       <div className="flex w-[1106px] justify-between items-center mx-6 xl:mx-auto">
         <Link to="/">
           <img src={tickitzIcon} alt="tickitz icon" />
         </Link>
         <nav
           className={`${
-            role === "admin" ? "w-[172px]" : "w-[265px]"
+            userRole === "admin" ? "w-[172px]" : "w-[265px]"
           } hidden md:flex justify-between text-sm`}
         >
-          {(role === "admin" ? admin : user).map((e, index) => (
+          {(userRole == "admin" ? admin : user).map((e, index) => (
             <Link key={index} to={e.link} className="relative group">
-              {e.nav}
+              <div
+                className={`${
+                  window.location.href === "http://localhost:5173" + e.link
+                    ? "text-blue"
+                    : ""
+                }`}
+              >
+                {e.nav}
+              </div>
               <div className="absolute top-[110%] w-full h-[3px] bg-blue rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
             </Link>
           ))}
         </nav>
-        {role === "admin" ? (
+        {isAuth ? (
           <nav className="w-[200px] hidden md:flex justify-between items-center">
-            <div className="">Location</div>
+            <div>Location</div>
             <img src={dropdownProfile} alt="dropdown profile" />
             <img src={searchIconProfile} alt="search profile" />
-            <img src={photoProfile} alt="photo profile" />
+
+            {/* Photo Profile */}
+            <div className="hidden md:block">
+              <div className="ml-4 flex items-center">
+                <div className="relative">
+                  <div>
+                    <button
+                      type="button"
+                      className={`relative flex max-w-xs items-center rounded-full ${
+                        profileClicked ? "ring-2 ring-black" : ""
+                      }`}
+                      id="user-menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      onClick={() => {
+                        setProfileClicked(!profileClicked);
+                      }}
+                    >
+                      <img
+                        className="size-[56px] rounded-full"
+                        src={photoProfile}
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                  <div
+                    className={`${
+                      profileClicked ? "absolute" : "hidden"
+                    } text-center left-[-30px] z-10 mt-2 w-[120px] origin-top-right rounded-md bg-white py-1 shadow-lg ring-1`}
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="user-menu-button"
+                    tabIndex={-1}
+                  >
+                    <Link
+                      to="#"
+                      className={`${
+                        role === "admin" ? "hidden" : "block"
+                      } px-4 py-2 text-sm text-gray-700`}
+                      role="menuitem"
+                      tabIndex={-1}
+                      id="user-menu-item-0"
+                    >
+                      Profile
+                    </Link>
+                    <Link
+                      to="/admin/dashboard"
+                      className={`${
+                        role === "admin" ? "block" : "hidden"
+                      } px-4 py-2 text-sm text-gray-700`}
+                      role="menuitem"
+                      tabIndex={-1}
+                      id="user-menu-item-1"
+                    >
+                      Admin
+                    </Link>
+                    <Link
+                      to="#"
+                      className="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabIndex={-1}
+                      id="user-menu-item-2"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        dispatch(logout());
+                        navigate("/sign-in");
+                      }}
+                    >
+                      Sign Out
+                    </Link>{" "}
+                  </div>
+                </div>
+              </div>
+            </div>
           </nav>
         ) : (
           <nav className="w-[197px] hidden md:flex justify-between text-sm">
             <Link
               className="border-1 border-blue rounded-[5px] text-blue px-[23px] py-[14px]"
-              to="/sign-in.html"
+              to="/sign-in"
             >
               Sign In
             </Link>
             <Link
               className="bg-blue rounded-[5px] text-white px-[23px] py-[14px]"
-              to="/sign-up.html"
+              to="/sign-up"
             >
               Sign Up
             </Link>
@@ -155,10 +290,30 @@ const Header = ({ role }) => {
             alt="close menu"
             onClick={handleCloseClick}
           />
-          <ul className="h-44 flex flex-col justify-between items-center mt-32">
-            {(role === "admin" ? adminProfile : userProfile).map((e, index) => (
+          <ul
+            className={`${
+              role === "admin" ? "h-[280px]" : "h-60"
+            } flex flex-col justify-between items-center mt-32`}
+          >
+            {(!isAuth
+              ? guestSidebar
+              : role === "admin"
+              ? adminSidebar
+              : userSidebar
+            ).map((e, index) => (
               <li key={index}>
-                <Link to={e.link}>{e.nav}</Link>
+                <Link
+                  to={e.link}
+                  onClick={(event) => {
+                    if (e.nav === "Sign Out") {
+                      event.preventDefault();
+                      dispatch(logout());
+                      navigate("/sign-in");
+                    }
+                  }}
+                >
+                  {e.nav}
+                </Link>
               </li>
             ))}
           </ul>

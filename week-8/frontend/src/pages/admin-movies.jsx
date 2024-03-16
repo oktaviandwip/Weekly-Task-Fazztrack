@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Header from "../components/Header";
 import calendarIcon from "../assets/calendar-icon.svg";
 import dropdown from "../assets/dropdown.svg";
 import Button from "../components/Movies/Button";
 import ListMovie from "../components/Admin/ListMovie";
 import Pagination from "../components/Movies/Pagination";
+import useApi from "../../utils/useApi";
 
 const AdminMovies = () => {
+  const api = useApi();
   const [data, setData] = useState(null);
   const [date, setDate] = useState("2024-12-03");
   useState(new Date().toISOString().slice(0, 10));
@@ -17,11 +18,12 @@ const AdminMovies = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/movies/?page=1")
+    api({
+      method: "GET",
+      url: "/movies?page=1",
+    })
       .then((res) => {
         setData(res.data.rows);
-        console.log(res.data.rows);
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +43,7 @@ const AdminMovies = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-dark-grey bg-opacity-[0.2] py-11">
-        <Header role={"admin"} />
+        <Header userRole={"admin"} />
         <main className="w-[327px] md:w-[768px] lg:w-[1000px] xl:w-[1106px] mx-auto">
           <div className="w-full h-[567px] flex flex-col justify-start items-center rounded-2xl bg-white mb-[49px]">
             <div className="w-[1012px] h-[57px] flex justify-between items-center mt-[39px]">
@@ -79,6 +81,7 @@ const AdminMovies = () => {
                   text={"Add Movies"}
                   width={"[140px]"}
                   height={"[56px]"}
+                  link={"/admin/movies/add"}
                 />
               </div>
             </div>

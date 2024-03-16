@@ -6,7 +6,7 @@ const upload = require("../middleware/upload");
 const response = require("../utils/response");
 const multer = require("multer");
 
-routers.get("/", controllers.getOrSort);
+routers.get("/", authCheck(), controllers.getOrSort);
 routers.get("/:name", authCheck(), controllers.search);
 routers.post("/", authCheck("admin"), upload.single("image"), controllers.add);
 routers.put(

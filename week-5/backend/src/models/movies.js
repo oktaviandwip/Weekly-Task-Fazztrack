@@ -61,7 +61,7 @@ models.saveData = async ({
   let urlFriendlyString = sanitizedString.split(" ").join("-");
 
   // Add file extension
-  let detail = `/${urlFriendlyString}.html`;
+  let detail = `/${urlFriendlyString}`;
 
   await db.query(
     `INSERT INTO movies (image, movie_name, category, director, casts, release_date,    

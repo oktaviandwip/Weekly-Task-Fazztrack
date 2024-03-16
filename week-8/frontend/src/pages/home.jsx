@@ -61,7 +61,7 @@ const home = () => {
       genres: ["Action", "Adventure"],
       recommended: false,
       date: "March 2024",
-      detail: "#",
+      detail: "/spiderman-homecoming",
       ticket: "#",
     },
   ];

@@ -2,6 +2,7 @@ import { useState } from "react";
 import search from "../../assets/search.svg";
 
 const GenresFilter = () => {
+  const genres = ["Thriller", "Horror", "Romantic", "Adventure", "Sci-Fi"];
   const [activeGenre, setActiveGenre] = useState(null);
 
   const handleGenreClick = (genre) => {
@@ -20,7 +21,7 @@ const GenresFilter = () => {
         <input
           type="search"
           id="search"
-          className="w-[340px] h-[64px] bg-lighter-grey border-1 border-grey rounded leading-5 tracking-[0.75px] outline-none pl-14"
+          className="w-[340px] h-[64px] bg-lighter-grey border-1 border-grey rounded leading-5 tracking-[0.75px] outline-none px-14"
           placeholder="New Born Expert"
         />
         <img
@@ -34,48 +35,20 @@ const GenresFilter = () => {
           Filter
         </div>
         <div className="flex justify-evenly md:justify-between items-center flex-wrap">
-          <div
-            className={`ml-5 md:ml-0 px-4 py-[10px] md:px-2 sm:py-[10px] lg:px-6 lg:py-[10px] rounded-[10px] ${
-              activeGenre === "Thriller" ? "bg-blue text-white" : ""
-            }`}
-            onClick={() => handleGenreClick("Thriller")}
-          >
-            Thriller
-          </div>
-          <div
-            className={`ml-5 md:ml-0 px-4 py-[10px] md:px-2 sm:py-[10px] lg:px-6 lg:py-[10px] rounded-[10px] ${
-              activeGenre === "Horror" ? "bg-blue text-white" : ""
-            }`}
-            onClick={() => handleGenreClick("Horror")}
-          >
-            Horror
-          </div>
-          <div
-            className={`ml-5 md:ml-0 px-4 py-[10px] md:px-2 sm:py-[10px] lg:px-6 lg:py-[10px] rounded-[10px] ${
-              activeGenre === "Romantic" ? "bg-blue text-white" : ""
-            }`}
-            onClick={() => handleGenreClick("Romantic")}
-          >
-            Romantic
-          </div>
-          <div
-            className={`ml-5 md:ml-0 px-4 py-[10px] md:px-2 sm:py-[10px] lg:px-6 lg:py-[10px] rounded-[10px] ${
-              activeGenre === "Adventure" ? "bg-blue text-white" : ""
-            }`}
-            onClick={() => handleGenreClick("Adventure")}
-          >
-            Adventure
-          </div>
-          <div
-            className={`ml-5 md:ml-0 px-4 py-[10px] md:px-2 sm:py-[10px] lg:px-6 lg:py-[10px] rounded-[10px] ${
-              activeGenre === "Sci-Fi" ? "bg-blue text-white" : ""
-            }`}
-            onClick={() => handleGenreClick("Sci-Fi")}
-          >
-            Sci-Fi
-          </div>
+          {genres.map((genre, index) => (
+            <div
+              key={index}
+              className={`ml-5 md:ml-0 px-4 py-[10px] md:px-2 sm:py-[10px] lg:px-6 lg:py-[10px] rounded-[10px] ${
+                activeGenre === genre ? "bg-blue text-white" : ""
+              }`}
+              onClick={() => handleGenreClick(genre)}
+            >
+              {genre}
+            </div>
+          ))}
         </div>
       </div>
+      ;
     </div>
   );
 };
