@@ -142,9 +142,6 @@ const MovieDetails = () => {
                       input[type="date"]::-webkit-calendar-picker-indicator {
                         opacity: 0;
                       }
-                      input[type="time"]::-webkit-calendar-picker-indicator {
-                        opacity: 0;
-                      }
                     `}
                   </style>
                 </div>

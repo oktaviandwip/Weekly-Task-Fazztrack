@@ -18,9 +18,11 @@ models.createTable = async () =>
       director VARCHAR(255) NOT NULL,
       casts VARCHAR(255)[] NOT NULL,
       release_date DATE NOT NULL,
-      duration_hour INT NOT NULL,
-      duration_minute INT NOT NULL,
+      hours INT NOT NULL,
+      minutes INT NOT NULL,
       synopsis TEXT NOT NULL,
+      date DATE NOT NULL,
+      time TIME[] NOT NULL,
       recommended BOOLEAN DEFAULT false,
       detail TEXT NOT NULL,
       created_at TIMESTAMP DEFAULT NOW(),
@@ -36,9 +38,11 @@ models.saveData = async ({
   director,
   casts,
   release_date,
-  duration_hour,
-  duration_minute,
+  hours,
+  minutes,
   synopsis,
+  date,
+  time,
   recommended,
 }) => {
   // Convert to lowercase
@@ -65,8 +69,8 @@ models.saveData = async ({
 
   await db.query(
     `INSERT INTO movies (image, movie_name, category, director, casts, release_date,    
-    duration_hour, duration_minute, synopsis, recommended, detail) 
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+    hours, minutes, synopsis, date, time, recommended, detail) 
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
     [
       image,
       movie_name,
@@ -74,9 +78,11 @@ models.saveData = async ({
       director,
       casts,
       release_date,
-      duration_hour,
-      duration_minute,
+      hours,
+      minutes,
       synopsis,
+      date,
+      time,
       recommended,
       detail,
     ]
@@ -150,6 +156,34 @@ models.searchData = async (name, page) => {
       `SELECT COUNT(*) FROM movies WHERE movie_name ILIKE $1`,
       [searchName]
     );
+    count = parseInt(count);
+
+    const meta = {
+      next:
+        count <= 10 ? null : page === Math.ceil(count / 12) ? null : page + 1,
+      prev: page === 1 ? null : page - 1,
+      total: count,
+    };
+
+    return { rows, meta };
+  } catch (err) {
+    throw err;
+  }
+};
+
+//Filter the movies based on genre
+models.filterData = async (genre, page) => {
+  try {
+    const offset = (page - 1) * 12;
+    const { rows } = await db.query(
+      `SELECT * FROM movies WHERE $1 = ANY(category) ORDER BY movie_name DESC LIMIT 12 OFFSET $2`,
+      [genre, offset]
+    );
+    let {
+      rows: [{ count }],
+    } = await db.query(`SELECT COUNT(*) FROM movies WHERE $1 = ANY(category)`, [
+      genre,
+    ]);
     count = parseInt(count);
 
     const meta = {

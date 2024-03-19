@@ -7,8 +7,8 @@ const ListMovie = ({
   image,
   name,
   category,
-  duration_hour,
-  duration_minute,
+  hours,
+  minutes,
   release_date,
 }) => {
   const actions = [
@@ -41,17 +41,17 @@ const ListMovie = ({
             style={{ backgroundImage: `url(${image})` }}
           ></div>
         </div>
-        <div className="w-[170px] h-[57px] flex justify-center items-center text-blue">
+        <div className="w-[130px] h-[57px] flex justify-center items-center text-blue">
           {name}
         </div>
-        <div className="w-[150px] h-[57px] flex justify-center items-center">
+        <div className="w-[220px] h-[57px] flex justify-center items-center">
           {category.join(", ")}
         </div>
         <div className="w-[117px] h-[57px] flex justify-center items-center">
           {new Date(release_date).toLocaleDateString()}
         </div>
         <div className="w-[150px] h-[57px] flex justify-center items-center">
-          {duration_hour} hours {duration_minute} minutes
+          {hours} hours {minutes} minutes
         </div>
         <div className="w-[119px] h-[57px] flex justify-between items-center">
           {actions.map(({ icon, alt, bgColor }, index) => (

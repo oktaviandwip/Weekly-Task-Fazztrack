@@ -24,13 +24,18 @@ models.saveData = async ({
   last_name,
   username,
   phone_number,
+  role,
   email,
   password,
 }) => {
+  if (role === undefined) {
+    role = "user";
+  }
+
   await db.query(
-    `INSERT INTO users (first_name, last_name, username, phone_number, email, password) 
-     VALUES ($1, $2, $3, $4, $5, $6)`,
-    [first_name, last_name, username, phone_number, email, password]
+    `INSERT INTO users (first_name, last_name, username, phone_number, role, email, password) 
+     VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+    [first_name, last_name, username, phone_number, role, email, password]
   );
 };
 

@@ -165,7 +165,9 @@ const Header = ({ userRole }) => {
             <Link key={index} to={e.link} className="relative group">
               <div
                 className={`${
-                  window.location.href === "http://localhost:5173" + e.link
+                  window.location.href === "http://localhost:5173" + e.link ||
+                  window.location.href ===
+                    "http://localhost:5173" + e.link + "/add"
                     ? "text-blue"
                     : ""
                 }`}

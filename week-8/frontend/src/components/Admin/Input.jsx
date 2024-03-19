@@ -1,4 +1,4 @@
-const Input = ({ name, type, width, height, placeholder }) => {
+const Input = ({ name, type, value, width, height, placeholder, onChange }) => {
   const possible = ["w-[275px]"];
 
   return (
@@ -10,9 +10,12 @@ const Input = ({ name, type, width, height, placeholder }) => {
         >
           <input
             type={type}
-            value={type === "date" ? new Date().toISOString().slice(0, 10) : ""}
+            value={
+              type === "date" ? new Date().toISOString().slice(0, 10) : value
+            }
             className={`relative bg-transparent w-full h-${height} outline-none z-20`}
             placeholder={placeholder}
+            onChange={onChange}
             required
           />
         </div>
