@@ -3,6 +3,7 @@ const fs = require("fs");
 const models = require("../models/admin");
 const response = require("../utils/response");
 
+// Get all or sort the movies
 controllers.getOrSort = async (req, res) => {
   if (Object.keys(req.query)[0] === "page") {
     try {
@@ -24,6 +25,19 @@ controllers.getOrSort = async (req, res) => {
   }
 };
 
+// Get a movie
+controllers.get = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    const data = await models.getMovie(id);
+    return response(res, 200, data);
+  } catch (err) {
+    return response(res, 500, err.message);
+  }
+};
+
+// Add the movie
 controllers.add = async (req, res) => {
   console.log(req.body);
   try {
@@ -33,6 +47,30 @@ controllers.add = async (req, res) => {
     }
   } catch (err) {
     return response(res, 500, err.message);
+  }
+};
+
+// Update a movie
+controllers.update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await models.updateMovie(req.body, id);
+    return response(res, 200, data);
+  } catch (err) {
+    return response(res, 500, err.message);
+  }
+};
+
+//Delete a movie
+controllers.delete = async (req, res) => {
+  {
+    try {
+      const { id } = req.params;
+      const data = await models.deleteMovie(id);
+      return response(res, 200, data);
+    } catch (err) {
+      return response(res, 500, err.message);
+    }
   }
 };
 

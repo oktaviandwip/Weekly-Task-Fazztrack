@@ -17,6 +17,7 @@ module.exports = async () => {
         minutes: 26,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -34,6 +35,7 @@ module.exports = async () => {
         minutes: 52,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -50,6 +52,7 @@ module.exports = async () => {
         minutes: 19,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -67,6 +70,7 @@ module.exports = async () => {
         minutes: 26,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -84,6 +88,7 @@ module.exports = async () => {
         minutes: 52,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -100,6 +105,7 @@ module.exports = async () => {
         minutes: 19,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -117,6 +123,7 @@ module.exports = async () => {
         minutes: 26,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -134,6 +141,7 @@ module.exports = async () => {
         minutes: 52,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -150,6 +158,7 @@ module.exports = async () => {
         minutes: 19,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -167,6 +176,7 @@ module.exports = async () => {
         minutes: 26,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -184,6 +194,7 @@ module.exports = async () => {
         minutes: 52,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -200,6 +211,7 @@ module.exports = async () => {
         minutes: 19,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -217,6 +229,7 @@ module.exports = async () => {
         minutes: 26,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -234,6 +247,7 @@ module.exports = async () => {
         minutes: 52,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -250,6 +264,7 @@ module.exports = async () => {
         minutes: 19,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -267,6 +282,7 @@ module.exports = async () => {
         minutes: 20,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -283,6 +299,7 @@ module.exports = async () => {
         minutes: 15,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -300,6 +317,7 @@ module.exports = async () => {
         minutes: 55,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -317,6 +335,7 @@ module.exports = async () => {
         minutes: 42,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -334,6 +353,7 @@ module.exports = async () => {
         minutes: 20,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -350,6 +370,7 @@ module.exports = async () => {
         minutes: 15,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -367,6 +388,7 @@ module.exports = async () => {
         minutes: 55,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -384,6 +406,7 @@ module.exports = async () => {
         minutes: 42,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -401,6 +424,7 @@ module.exports = async () => {
         minutes: 20,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -417,6 +441,7 @@ module.exports = async () => {
         minutes: 15,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -434,6 +459,7 @@ module.exports = async () => {
         minutes: 55,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -451,6 +477,7 @@ module.exports = async () => {
         minutes: 42,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -468,6 +495,7 @@ module.exports = async () => {
         minutes: 20,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,
@@ -484,6 +512,7 @@ module.exports = async () => {
         minutes: 15,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -501,6 +530,7 @@ module.exports = async () => {
         minutes: 55,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: true,
@@ -518,6 +548,7 @@ module.exports = async () => {
         minutes: 42,
         synopsis:
           "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+        location: "Halim, Jakarta Timur",
         date: "2024-02-15",
         time: ["08:30", "10:30", "13:30"],
         recommended: false,

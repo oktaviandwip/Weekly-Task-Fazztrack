@@ -6,9 +6,11 @@ import Movies from "./pages/movies";
 import Spiderman from "./pages/spiderman";
 import Dashboard from "./pages/dashboard";
 import AdminMovies from "./pages/admin-movies";
-import AddMovies from "./pages/add-movies";
+import AddMovie from "./pages/add-movie";
 import PrivRouteUser from "./privRouteUser";
 import PrivRouteAdmin from "./privRouteAdmin";
+import EditMovie from "./pages/edit-movie";
+import ReadMovie from "./pages/read-movie";
 
 export default createBrowserRouter([
   {
@@ -39,7 +41,7 @@ export default createBrowserRouter([
     path: "/spiderman-homecoming",
     element: (
       <PrivRouteUser>
-        <Dashboard />
+        <Spiderman />
       </PrivRouteUser>
     ),
   },
@@ -66,7 +68,25 @@ export default createBrowserRouter([
     path: "/admin/movies/add",
     element: (
       <PrivRouteAdmin>
-        <AddMovies />
+        <AddMovie />
+      </PrivRouteAdmin>
+    ),
+  },
+
+  {
+    path: "/admin/movies/edit/:id",
+    element: (
+      <PrivRouteAdmin>
+        <EditMovie />
+      </PrivRouteAdmin>
+    ),
+  },
+
+  {
+    path: "/admin/movies/read/:id",
+    element: (
+      <PrivRouteAdmin>
+        <ReadMovie />
       </PrivRouteAdmin>
     ),
   },

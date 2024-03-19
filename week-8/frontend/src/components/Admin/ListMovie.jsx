@@ -1,8 +1,11 @@
 import editIcon from "../../assets/edit-icon.svg";
 import eyeIcon from "../../assets/eye-icon.svg";
 import deleteIcon from "../../assets/delete-icon.svg";
+import { Link } from "react-router-dom";
+import useApi from "../../../utils/useApi";
 
 const ListMovie = ({
+  id,
   no,
   image,
   name,
@@ -11,23 +14,23 @@ const ListMovie = ({
   minutes,
   release_date,
 }) => {
-  const actions = [
-    {
-      icon: editIcon,
-      alt: "edit icon",
-      bgColor: "bg-blue",
-    },
-    {
-      icon: eyeIcon,
-      alt: "view icon",
-      bgColor: "bg-[#5D5FEF]",
-    },
-    {
-      icon: deleteIcon,
-      alt: "delete icon",
-      bgColor: "bg-[#E82C2C]",
-    },
-  ];
+  const api = useApi();
+
+  const handleDelete = (id) => {
+    const confirm = window.confirm("Would you like to delete this movie?");
+    if (confirm) {
+      api({
+        method: "DELETE",
+        url: `/admin/movies/${id}`,
+      })
+        .then((_) => {
+          location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
 
   return (
     <>
@@ -54,14 +57,30 @@ const ListMovie = ({
           {hours} hours {minutes} minutes
         </div>
         <div className="w-[119px] h-[57px] flex justify-between items-center">
-          {actions.map(({ icon, alt, bgColor }, index) => (
-            <div
-              key={index}
-              className={`flex justify-center items-center size-[31px] rounded-md ${bgColor} transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300 cursor-pointer`}
-            >
-              <img src={icon} alt={alt} />
-            </div>
-          ))}
+          {/* Edit Button */}
+          <Link
+            to={`/admin/movies/edit/${id}`}
+            className="btn flex justify-center items-center size-[31px] rounded-md bg-blue transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300 cursor-pointer"
+          >
+            <img src={editIcon} alt={"edit icon"} />
+          </Link>
+
+          {/* Read Button */}
+          <Link
+            to={`/admin/movies/read/${id}`}
+            className="btn flex justify-center items-center size-[31px] rounded-md bg-[#5D5FEF] transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300 cursor-pointer"
+          >
+            <img src={eyeIcon} alt={"read icon"} />
+          </Link>
+
+          {/* Delete Button */}
+          <button
+            to={`/admin/movies/read/${id}`}
+            className="btn flex justify-center items-center size-[31px] rounded-md bg-[#E82C2C] transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300 cursor-pointer"
+            onClick={() => handleDelete(id)}
+          >
+            <img src={deleteIcon} alt={"delete icon"} />
+          </button>
         </div>
       </div>
       <div className="w-full border-t-1 border-[#E6EAF0]"></div>

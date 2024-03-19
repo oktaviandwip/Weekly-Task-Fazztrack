@@ -21,6 +21,7 @@ models.createTable = async () =>
       hours INT NOT NULL,
       minutes INT NOT NULL,
       synopsis TEXT NOT NULL,
+      location TEXT NOT NULL,
       date DATE NOT NULL,
       time TIME[] NOT NULL,
       recommended BOOLEAN DEFAULT false,
@@ -41,6 +42,7 @@ models.saveData = async ({
   hours,
   minutes,
   synopsis,
+  location,
   date,
   time,
   recommended,
@@ -69,8 +71,8 @@ models.saveData = async ({
 
   await db.query(
     `INSERT INTO movies (image, movie_name, category, director, casts, release_date,    
-    hours, minutes, synopsis, date, time, recommended, detail) 
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
+    hours, minutes, synopsis, location, date, time, recommended, detail) 
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)`,
     [
       image,
       movie_name,
@@ -81,6 +83,7 @@ models.saveData = async ({
       hours,
       minutes,
       synopsis,
+      location,
       date,
       time,
       recommended,

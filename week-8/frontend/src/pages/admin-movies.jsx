@@ -152,7 +152,7 @@ const AdminMovies = () => {
                 <button
                   type="submit"
                   value="Submit"
-                  className={`w-[91px] md:w-[140px] h-[40px] md:h-[56px] bg-blue rounded-md flex justify-center items-center text-sm text-white leading-6 tracking-[0.75px] transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300`}
+                  className={`btn w-[91px] md:w-[140px] h-[40px] md:h-[56px] bg-blue rounded-md flex justify-center items-center text-sm text-white leading-6 tracking-[0.75px] transform active:scale-90 active:opacity-75 hover:bg-opacity-90 transition duration-300`}
                   onClick={() => handleClick("/admin/movies/add")}
                 >
                   <div className="hidden md:flex">Add Movies</div>
@@ -221,6 +221,7 @@ const AdminMovies = () => {
                     return (
                       <ListMovie
                         key={e.movie_id}
+                        id={e.movie_id}
                         no={(page - 1) * 5 + index + 1}
                         image={e.image}
                         name={e.movie_name}
