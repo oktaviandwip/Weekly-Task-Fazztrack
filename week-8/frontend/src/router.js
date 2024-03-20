@@ -11,6 +11,7 @@ import PrivRouteUser from "./privRouteUser";
 import PrivRouteAdmin from "./privRouteAdmin";
 import EditMovie from "./pages/edit-movie";
 import ReadMovie from "./pages/read-movie";
+import Profile from "./pages/profile";
 
 export default createBrowserRouter([
   {
@@ -42,6 +43,15 @@ export default createBrowserRouter([
     element: (
       <PrivRouteUser>
         <Spiderman />
+      </PrivRouteUser>
+    ),
+  },
+
+  {
+    path: "/profile/:id",
+    element: (
+      <PrivRouteUser>
+        <Profile />
       </PrivRouteUser>
     ),
   },

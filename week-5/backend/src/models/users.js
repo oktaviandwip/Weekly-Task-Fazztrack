@@ -9,10 +9,12 @@ models.createTable = async () =>
       first_name VARCHAR(255),
       last_name VARCHAR(255),
       username TEXT,
+      country_code INT DEFAULT 62,
       phone_number VARCHAR(15),
       role VARCHAR(255) DEFAULT 'user',
       email VARCHAR(255) UNIQUE NOT NULL,
       password TEXT NOT NULL,
+      confirm_password TEXT,
       created_at TIMESTAMP DEFAULT NOW(),
       updated_at TIMESTAMP
     )`
@@ -23,6 +25,7 @@ models.saveData = async ({
   first_name,
   last_name,
   username,
+  country_code,
   phone_number,
   role,
   email,
@@ -32,10 +35,23 @@ models.saveData = async ({
     role = "user";
   }
 
+  if (country_code === undefined) {
+    country_code = 62;
+  }
+
   await db.query(
-    `INSERT INTO users (first_name, last_name, username, phone_number, role, email, password) 
-     VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-    [first_name, last_name, username, phone_number, role, email, password]
+    `INSERT INTO users (first_name, last_name, username, country_code, phone_number, role, email, password) 
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+    [
+      first_name,
+      last_name,
+      username,
+      country_code,
+      phone_number,
+      role,
+      email,
+      password,
+    ]
   );
 };
 
@@ -43,7 +59,7 @@ models.saveData = async ({
 models.getPassword = async (email) => {
   try {
     const { rows } = await db.query(
-      `SELECT password, role FROM users WHERE email = $1`,
+      `SELECT user_id, password, role FROM users WHERE email = $1`,
       [email]
     );
     return rows;
@@ -77,6 +93,18 @@ models.getData = async (page) => {
   }
 };
 
+//Get a user
+models.getUser = async (id) => {
+  try {
+    const { rows } = await db.query(`SELECT * FROM users WHERE user_id = $1`, [
+      id,
+    ]);
+    return { rows };
+  } catch (err) {
+    throw err;
+  }
+};
+
 //Add a user
 models.addData = async ({
   first_name,
@@ -101,15 +129,34 @@ models.addData = async ({
 
 //Update a user
 models.updateData = async (
-  { first_name, last_name, username, phone_number, email, password },
+  {
+    first_name,
+    last_name,
+    country_code,
+    phone_number,
+    email,
+    password,
+    confirm_password,
+  },
   id
 ) => {
+  const username = (first_name + last_name).toLowerCase().replace(/\s/g, "");
   return await db.query(
     `UPDATE users 
-     SET first_name = $1, last_name = $2, username = $3, phone_number = $4, email = $5, password = $6, updated_at = NOW() 
-     WHERE user_id = $7
+     SET first_name = $1, last_name = $2, username = $3, country_code = $4, phone_number = $5, email = $6, password = $7, confirm_password = $8, updated_at = NOW() 
+     WHERE user_id = $9
      RETURNING user_id`,
-    [first_name, last_name, username, phone_number, email, password, id]
+    [
+      first_name,
+      last_name,
+      username,
+      country_code,
+      phone_number,
+      email,
+      password,
+      confirm_password,
+      id,
+    ]
   );
 };
 

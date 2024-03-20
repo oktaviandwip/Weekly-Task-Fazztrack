@@ -14,6 +14,7 @@ const Header = ({ userRole }) => {
   const dispatch = useDispatch();
   const { isAuth } = useSelector((s) => s.users);
   const { role } = useSelector((s) => s.users);
+  const { user_id } = useSelector((s) => s.users);
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [profileClicked, setProfileClicked] = useState(false);
@@ -105,7 +106,7 @@ const Header = ({ userRole }) => {
 
     {
       nav: "Profile",
-      link: "#",
+      link: `/profile/${user_id}`,
     },
 
     {
@@ -218,7 +219,7 @@ const Header = ({ userRole }) => {
                     tabIndex={-1}
                   >
                     <Link
-                      to="#"
+                      to={`/profile/${user_id}`}
                       className={`${
                         role === "admin" ? "hidden" : "block"
                       } px-4 py-2 text-sm text-gray-700`}

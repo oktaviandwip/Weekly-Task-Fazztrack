@@ -4,9 +4,10 @@ const bcrypt = require("bcrypt");
 const response = require("../utils/response");
 const jwt = require("jsonwebtoken");
 
-const genToken = (role) => {
+const genToken = (role, user_id) => {
   const payload = {
-    role: role,
+    role,
+    user_id,
   };
 
   const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: "24h" });
@@ -26,7 +27,8 @@ controllers.login = async (req, res) => {
 
     if (check) {
       const role = rows[0].role;
-      const tokenJwt = genToken(role);
+      const user_id = rows[0].user_id;
+      const tokenJwt = genToken(role, user_id);
       return response(res, 200, { token: tokenJwt });
     } else {
       return response(res, 401, "Wrong password!");

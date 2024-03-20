@@ -43,7 +43,13 @@ const SignIn = () => {
     })
       .then(({ data }) => {
         const decodedToken = jwtDecode(data.token);
-        dispatch(login({ token: data.token, role: decodedToken.role }));
+        dispatch(
+          login({
+            token: data.token,
+            role: decodedToken.role,
+            user_id: decodedToken.user_id,
+          })
+        );
       })
       .catch((err) => {
         alert(`ERROR: ${err.response.data.message}`);
