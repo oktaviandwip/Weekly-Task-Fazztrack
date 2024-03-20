@@ -187,8 +187,6 @@ module.exports = async () => {
       },
 
       { email: "admin@gmail.com", password: "Jak_mania10", role: "admin" },
-
-      { email: "putra@gmail.com", password: "Jak_mania10" },
     ];
 
     for await (const user of users) {

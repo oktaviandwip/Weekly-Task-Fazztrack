@@ -90,6 +90,7 @@ const EditMovies = () => {
       data: formData,
     })
       .then((res) => {
+        alert("Movie updated successfully!");
         navigate(`/admin/movies`);
         console.log(res);
       })
@@ -104,7 +105,7 @@ const EditMovies = () => {
       <div className="w-[327px] md:w-[732px] h-[2030px] md:h-[1713px] flex flex-col justify-start items-center rounded-2xl bg-white mb-[49px] px-[21px] md:px-[58px] mx-auto">
         <form className="w-full">
           <div className="w-full font-bold text-xl text-left leading-[30px] tracking-[0.25px] mt-[52px]">
-            Add New Movie
+            Update Movie
           </div>
           <div className="flex flex-col justify-center items-center w-full">
             <img

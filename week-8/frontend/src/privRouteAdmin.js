@@ -5,7 +5,7 @@ const PrivateRoute = ({ children }) => {
   const { role } = useSelector((s) => s.users);
 
   if (role !== "admin") {
-    return <Navigate to="/sign-in" />;
+    return <Navigate to="/" />;
   }
   return children;
 };

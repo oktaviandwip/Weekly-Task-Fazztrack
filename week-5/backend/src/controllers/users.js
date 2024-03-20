@@ -41,7 +41,6 @@ controllers.add = async (req, res) => {
 //Update a user
 controllers.update = async (req, res) => {
   try {
-    console.log(req.body);
     req.body.password = await hashing(req.body.password);
     req.body.confirm_password = await hashing(req.body.confirm_password);
     const { rows } = await models.updateData(req.body, req.params.id);

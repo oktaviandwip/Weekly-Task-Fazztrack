@@ -71,6 +71,7 @@ const AddMovies = () => {
       data: formData,
     })
       .then((res) => {
+        alert("Movie added successfully!");
         navigate(`/admin/movies`);
         console.log(res);
       })
